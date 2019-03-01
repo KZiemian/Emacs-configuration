@@ -121,6 +121,17 @@
 ;; Installing packeges
 
 
+;; ##########
+;; Org-mode configuration
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+
+
+
+
 ;; #####
 ;; Achievements ;)
 (use-package achievements
@@ -144,9 +155,3 @@
   :config (which-key-mode))
 
 
-;; ##########
-;; Org-mode configuration
-(use-package org-bullets
-  :ensure t
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
