@@ -83,8 +83,8 @@
 
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
-	("marmalade" . "https://marmalade-repo.org")
-	("melpa" . "https://melpa.org")))
+	("marmalade" . "https://marmalade-repo.org/packages/")
+	("melpa" . "https://melpa.org/packages/")))
 
 ;; package-archives
 
@@ -134,8 +134,8 @@
    ("C-c C-<" . mc/mark-all-like-this)))
 
 ;; Achievementy ;).
-(use-package achievements
-  :config (achievements-mode t))
+;; (use-package achievements
+;;   :config (achievements-mode t))
 
 ;; Fala podkreslajaca polorzenie kursora.
 (use-package beacon
@@ -397,6 +397,14 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 
+
+;; ##########
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+
 (setq org-agenda-files (list "~/Podstawy-I/org/Wazne.org"
 			     "~/Podstawy-I/org/Szybko.org"
 			     "~/Podstawy-I/org/Praca.org"
@@ -427,7 +435,7 @@
     ("#336c6c" "#205070" "#0f2050" "#806080" "#401440" "#6c1f1c" "#6b400c" "#23733c")))
  '(package-selected-packages
    (quote
-    (swiper-helm inf-ruby multiple-cursors rust-playground cargo rust-mode beacon auctex-latexmk auctex avy use-package undo-tree slime rainbow-delimiters impatient-mode helm-gtags ggtags function-args auto-complete auto-compile aggressive-indent achievements)))
+    (org-bullets swiper-helm inf-ruby multiple-cursors rust-playground cargo rust-mode beacon auctex-latexmk auctex avy use-package undo-tree slime rainbow-delimiters impatient-mode helm-gtags ggtags function-args auto-complete auto-compile aggressive-indent achievements)))
  '(rainbow-delimiters nil)
  '(rainbow-delimiters-max-face-count 7)
  '(vc-annotate-background "#d4d4d4")
