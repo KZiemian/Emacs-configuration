@@ -44,6 +44,10 @@
 (setq ido-crate-new-buffer 'always)	; Don't ask when you create new
 ;; buffer
 
+(setq ido-file-extensions-order '(".tex" ".org" ".el" ".lisp"))
+(setq ido-ignore-extensions t) 		; Ignore objects definde by
+;; `complete-ignored-extensions' variable
+
 
 
 
