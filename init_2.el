@@ -44,7 +44,7 @@
 (setq ido-crate-new-buffer 'always)	; Don't ask when you create new
 ;; buffer
 
-(setq ido-file-extensions-order '(".tex" ".org" ".el" ".lisp"))
+(setq ido-file-extensions-order '(".tex" ".org" ".txt" ".el" ".lisp"))
 (setq ido-ignore-extensions t) 		; Ignore objects definde by
 ;; `complete-ignored-extensions' variable
 
@@ -135,12 +135,14 @@
 ;; #####
 ;; Achievements ;)
 (use-package achievements
-  :config (beacon-mode t))
+  :ensure t
+  :config (achievements-mode t))
 
 
 ;; #####
 ;; Wave showing where point is
 (use-package beacon
+  :ensure t
   :config (beacon-mode t))
 
 
