@@ -41,7 +41,7 @@
 (ido-mode 1)
 
 (setq ido-use-filename-at-point 'guess)	; Find File At Point
-(setq ido-crate-new-buffer 'always)	; Don't ask when you create new
+(setq ido-create-new-buffer 'always)	; Don't ask when you create new
 ;; buffer
 
 (setq ido-file-extensions-order '(".tex" ".org" ".txt" ".el" ".lisp"))
