@@ -8,7 +8,23 @@
 
 
 ;; Setting up predicators
-(fset 'yes-or-no-p 'y-or-n-p)   ; Change question from "yes or no" to "y or n"
+(fset 'yes-or-no-p 'y-or-n-p)   ; Change question from "yes or no"
+;; to "y or n"
+
+
+
+;; #####
+;; Global modes
+(global-linum-mode t)   ; Shows number of line on the left edge of window.
+(column-number-mode t)	; Shows number of column where point is.
+
+
+
+;; #####
+;; Global keychords (????)
+(global-set-key [f1] 'shell)
+(global-set-key [C-tab] 'other-window) 	; Don't work in org mode, correct
+;; that
 
 
 
@@ -17,6 +33,7 @@
 ;; #################
 ;; Configuration of frames
 (tool-bar-mode -1)
+
 
 
 
@@ -44,7 +61,8 @@
 (setq ido-create-new-buffer 'always)	; Don't ask when you create new
 ;; buffer
 
-(setq ido-file-extensions-order '(".tex" ".org" ".txt" ".el" ".lisp"))
+(setq ido-file-extensions-order '(".tex" ".org" ".txt" ".el"
+				  ".rs" ".lisp"))
 (setq ido-ignore-extensions t) 		; Ignore objects definde by
 ;; `complete-ignored-extensions' variable
 
@@ -140,13 +158,14 @@
 
 
 ;; #####
-;; Wave showing where point is
+;; Beacon -- wave showing where point is
 (use-package beacon
   :ensure t
   :config (beacon-mode t))
 
 
 ;; #####
+;; Try -- try package without installing it
 (use-package try
   :ensure t)
 
