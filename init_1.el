@@ -1,3 +1,6 @@
+;; #################
+;; Basic configuration of build-in features
+
 ;; Setting up build-in variables
 (setq inhibit-startup-message t)  ; Disable start up message.
 (setq next-line-add-newlines t)
@@ -5,7 +8,9 @@
 
 
 ;; Setting up predicators
-(fset 'yes-or-no-p 'y-or-n-p)   ; Change question from "yes or no" to "y or n"
+(fset 'yes-or-no-p 'y-or-n-p)   ; Change question from "yes or no"
+;; to "y or n"
+
 
 
 ;; #####
@@ -20,6 +25,8 @@
 (global-set-key [f1] 'shell)
 (global-set-key [C-tab] 'other-window) 	; Don't work in org mode, correct
 ;; that
+
+
 
 
 
