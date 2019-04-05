@@ -17,6 +17,7 @@
 ;; Global modes
 (global-linum-mode t)   ; Shows number of line on the left edge of window.
 (column-number-mode t)	; Shows number of column where point is.
+(winner-mode 1)		; Allow to undo windows changes
 
 
 
@@ -25,6 +26,14 @@
 (global-set-key [f1] 'shell)
 (global-set-key [C-tab] 'other-window) 	; Don't work in org mode, correct
 ;; that
+
+
+
+
+
+;; #################
+;; Configuration of frames
+(tool-bar-mode -1)
 
 
 
@@ -44,8 +53,6 @@
 
 
 ;; Ustawienia wbudowanych zmiennych.
-
-(setq inhibit-startup-echo-area-message t)
 
 ;; (defun set-exec-path-from-shell-PATH ()
 ;;   "Set up Emacs' `exec-path' and PATH environment variable to match that used by the user's shell.
@@ -69,14 +76,118 @@
 
 
 
-;; Ustawienia okna.
+;; Ustawienia ramy
 
 (when window-system
   (tooltip-mode -1)
-  (tool-bar-mode -1)
   (menu-bar-mode 1)
   (scroll-bar-mode -1)
   (set-frame-size (selected-frame) 80 100))
+
+
+
+
+
+;; #################
+;; Configuration of package menager
+(require 'package)
+(setq package-enable-at-startup nil)
+
+;; Setting up list of repositories
+(setq package-archives
+      '(("gnu" . "https://elspa.gnu.org/packages/")))
+(add-to-list 'package-archives
+	     '("marmelade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
+
+;; 
+(package-initialize)
+
+
+
+
+
+;; #################
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; (setq use-package-verbose t)
+;; (setq load-prefer-newer t)
+
+
+
+
+
+;; ###########################
+;; Installing packeges
+
+
+;; ##########
+;; Org-mode configuration
+(use-package org-bullets
+  :ensure t
+  :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+
+
+
+;; #####
+;; Ace-window -- moveing to numbered window
+(use-package ace-window
+  :ensure t
+  :config
+  (global-set-key [remap other-window] 'ace-window)
+  (custom-set-faces
+   '(aw-leading-char-face
+     ((t (:inherit ace-jump-face-foreground :height 3.0))))))
+	  
+
+;; #####
+;; Achievements ;)
+(use-package achievements
+  :ensure t
+  :config (achievements-mode t))
+
+
+;; #####
+;; Beacon -- wave showing where point is
+(use-package beacon
+  :ensure t
+  :config (beacon-mode t))
+
+
+;; #####
+;; Lorem-ipsum
+(use-package lorem-ipsum
+  :ensure t
+  ;; :config (lorem-ipsum-use-default-bindings)
+  )
+
+
+;; #####
+;; Try -- try package without installing it
+(use-package try
+  :ensure t)
+
+
+;; #####
+;; Undo-tree
+(use-package undo-tree
+  :ensure t
+  :config (global-undo-tree-mode t))
+
+
+;; #####
+;; Which-key
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
+
+
 
 
 
@@ -91,24 +202,11 @@
 
 ;; (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
-(setq package-archives
-      '(("gnu" . "http://elpa.gnu.org/packages/")
-	("marmalade" . "https://marmalade-repo.org/packages/")
-	("melpa" . "https://melpa.org/packages/")))
-
-;; package-archives
-
 ;; Inicjalizowanie paczek Emacsa
 
 (package-initialize)
 
-;; Use-package
-(setq use-package-verbose t)
-(require 'use-package)
-(use-package auto-compile
-  :ensure t
-  :config (auto-compile-on-load-mode))
-(setq load-prefer-newer t)
+
 
 ;; Ustawienia wyszukiwania ostatnio edytowanych plikow.
 ;; Nie wiem czy to jest potrzebne, gdy używam helma, jednak
@@ -142,15 +240,6 @@
    ("C->" . mc/mark-next-like-this)
    ("C-<" . mc/mark-previous-like-this)
    ("C-c C-<" . mc/mark-all-like-this)))
-
-;; Achievementy ;).
-;; (use-package achievements
-;;   :config (achievements-mode t))
-
-;; Fala podkreslajaca polorzenie kursora.
-(use-package beacon
-  :ensure t
-  :config (beacon-mode t))
 
 
 
@@ -410,12 +499,6 @@
 
 
 ;; ##########
-(use-package org-bullets
-  :ensure t
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-
-
 (setq org-agenda-files (list "~/Podstawy-I/org/Wazne.org"
 			     "~/Podstawy-I/org/Szybko.org"
 			     "~/Podstawy-I/org/Praca.org"
