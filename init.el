@@ -1,7 +1,7 @@
 ;; #################
 ;; Basic configuration of build-in features
 
-;; Setting up build-in variables
+;; Setting up built-in variables
 (setq inhibit-startup-message t)  ; Disable start up message.
 (setq next-line-add-newlines t)
 (setq sentence-end-double-space nil)
@@ -14,10 +14,13 @@
 
 
 ;; #####
-;; Global modes
-(global-linum-mode t)   ; Shows number of line on the left edge of window.
-(column-number-mode t)	; Shows number of column where point is.
-(winner-mode 1)		; Allow to undo windows changes
+;; Releasing built-in keychords (????)
+
+;; (global-set-key (kbd "<f3>") nil)
+;; ;; Release `kmacro-start-macro-or-insert-counter'
+;; (global-set-key (kbd "<f4>") nil)
+;; ;; Release `kmacro-end-or-call-macro'
+
 
 
 ;; #####
@@ -28,10 +31,22 @@
 
 
 
+;; #####
+;; Global modes
+(global-linum-mode t)   ; Shows number of line on the left edge of window.
+(column-number-mode t)	; Shows number of column where point is.
+(winner-mode 1)		; Allow to undo windows changes
+(electric-pair-mode t)	; Toggle automatic parenthis pairing
+
+
+
+
 
 
 ;; #################
 ;; Configuration of frames
+(menu-bar-mode -1)  ; Evaluate with positive integer to show menu
+;; in the top of frame.
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
@@ -42,7 +57,7 @@
 ;; #################
 ;; Setting up backups management
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
-(setq delete-old-version -1)
+(setq delete-old-versions 1)
 (setq version-control t)
 (setq vc-make-backup-files t)
 (setq auto-save-file-name-transforms
@@ -54,14 +69,8 @@
 
 ;; #################
 ;; Cofiguration of ido (Interactive DO things)
-;; (setq indo-enable-flex-matching t)
-;; (setq ido-everywhere t)
-;; (ido-mode 1)
 
-(setq ido-use-filename-at-point 'guess)	; Find File At Point
-(setq ido-create-new-buffer 'always)	; Don't ask when you create new
-;; buffer
-
+;; Maybe this is still needed. But I don't know.
 (setq ido-file-extensions-order '(".tex" ".org" ".txt" ".el"
 				  ".rs" ".lisp"))
 (setq ido-ignore-extensions t) 		; Ignore objects definde by
@@ -137,7 +146,8 @@
   (global-set-key [remap other-window] 'ace-window)
   (custom-set-faces
    '(aw-leading-char-face
-     ((t (:inherit ace-jump-face-foreground :height 3.0))))))
+     ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+  )
 	  
 
 ;; #####
@@ -161,6 +171,17 @@
 
 
 ;; #####
+;; Ivy
+(use-package ivy
+  :ensure t
+  :diminish (ivy-mode)
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-display-style 'fancy))
+
+
+;; #####
 ;; Lorem-ipsum
 (use-package lorem-ipsum
   :ensure t
@@ -169,31 +190,44 @@
 
 
 ;; #####
+;; Rust-mode -- Emacs mode for Rust programing language
+(use-package rust-mode
+  :ensure t
+  ;; :config (setq rust-format-on-save t)
+  )
+
+
+;; #####
 ;; Swiper
 (use-package swiper
   :ensure t
-  :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t)
-  (setq enable-recursive-minibuffers t)
+  :bind (("C-s" . swiper)
+	 ("C-r" . swiper)
+	 ("C-c C-r" . ivy-resume)
+	 ("M-x" . counsel-M-x)
+	 ("C-x C-f" . 'counsel-find-file)
+	 ("C-h f" . 'counsel-describe-function)
+	 ("C-h v" . 'counsel-describe-variable)
+	 ("C-h l" . 'counsel-find-library)
+	 ("C-h i" . 'counsel-info-lookup-symbol)
+	 ("C-c u" . 'counsel-unicode-char)
+	 ("C-c g" . 'counsel-git)
+	 ("C-c j" . 'counsel-git-grep)
+	 ("C-c k" . 'counsel-ag)
+	 ("C-x l" . 'counsel-locate)
+	 ("C-S-o" . 'counsel-rythmbox)
+	 ;; Alternative keychords
+	 ;; ("<f4>" . 'ivy-resume)
+	 ;; ("<f2> f" . 'counsel-describe-function)
+	 ;; ("<f2> v" . 'counsel-describe-variable)
+	 ;; ("<f2> l" . 'counsel-find-library)
+	 ;; ("<f2> i" . 'counsel-info-lookup-symbol)
+	 ;; ("<f3> u" . 'counsel-unicode-char)
+	 )
+  ;; :config
   ;; enable this if you want `swiper' to use it
   ;; (setq search-default-mode #'char-fold-to-regexp)
-  (global-set-key "\C-s" 'swiper)
-  (global-set-key (kbd "C-c C-r") 'ivy-resume)
-  (global-set-key (kbd "<f8>") 'ivy-resume)
-  (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-  (global-set-key (kbd "<f5> f") 'counsel-describe-function)
-  (global-set-key (kbd "<f3> v") 'counsel-describe-variable)
-  (global-set-key (kbd "<f3> l") 'counsel-find-library)
-  (global-set-key (kbd "<f4> i") 'counsel-info-lookup-symbol)
-  (global-set-key (kbd "<f4> u") 'counsel-unicode-char)
-  (global-set-key (kbd "C-c g") 'counsel-git)
-  (global-set-key (kbd "C-c j") 'counsel-git-grep)
-  (global-set-key (kbd "C-c k") 'counsel-ag)
-  (global-set-key (kbd "C-x l") 'counsel-locate)
-  (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-  (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+)
 
 
 ;; #####
@@ -230,7 +264,7 @@
  '(load-prefer-newer t)
  '(package-selected-packages
    (quote
-    (counsel which-key use-package undo-tree try swiper-helm slime rust-playground rainbow-delimiters org-bullets multiple-cursors lorem-ipsum inf-ruby impatient-mode helm-gtags ggtags function-args cargo beacon auto-complete auto-compile auctex-latexmk aggressive-indent achievements ace-window)))
+    (counsel undo-tree try swiper-helm slime rust-playground rainbow-delimiters org-bullets lorem-ipsum inf-ruby impatient-mode helm-gtags ggtags function-args cargo beacon auto-complete auto-compile auctex-latexmk aggressive-indent achievements ace-window)))
  '(use-package-verbose t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
