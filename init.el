@@ -25,9 +25,11 @@
 
 ;; #####
 ;; Global keychords (????)
+(global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key [f1] 'shell)
 (global-set-key [C-tab] 'other-window) 	; Don't work in org mode, correct
 ;; that
+
 
 
 
@@ -76,15 +78,22 @@
 
 
 
+;; #################
+;; Configuration of documentation
+;; (setq apropos-sort-by-score t)
+;; Emacs don't know this variable?!?!
+
 
 ;; #################
-;; Setting up autoscorrection
+;; Setting up auto-correction
 ;; (setq ispell-program-name "aspell")	; By default is `aspell'
 (setq ispell-dictionary "english")
 ;; (setq ispell-dictionary "polish")
 
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
+
+
 
 
 
@@ -125,7 +134,7 @@
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
 
-;; 
+;;
 (package-initialize)
 
 
@@ -133,7 +142,7 @@
 
 
 ;; #################
-;; Bootstrap `use-package'
+;; `Use-package' -- bookstraping package to manage packages
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -150,7 +159,7 @@
 
 
 ;; #################
-;; Org-mode configuration
+;; `Org-mode' -- configuration of gigant `org-mode'
 (use-package org-bullets
   :ensure t
   :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
@@ -160,7 +169,7 @@
 
 
 ;; #####
-;; Ace-window -- moveing to numbered window
+;; `Ace-window' -- moveing to numbered window
 (use-package ace-window
   :ensure t
   :config
@@ -168,29 +177,30 @@
   (custom-set-faces
    '(aw-leading-char-face
      ((t (:inherit ace-jump-face-foreground :height 3.0))))))
-	  
+
 
 ;; #####
-;; Achievements ;)
+;; `Achievements' ;)
 (use-package achievements
   :ensure t
   :config (achievements-mode t))
 
 
 ;; #####
-;; Beacon -- wave showing where point is
+;; `Beacon' -- wave showing where point is
 (use-package beacon
   :ensure t
   :config (beacon-mode t))
 
 
 ;; #####
-;; Counsel -- need for Swiper packages
+;; `Counsel' -- need for Swiper packages
 (use-package counsel
   :ensure t)
 
+
 ;; #####
-;; Flymake
+;; `Flymake' -- I don't know what it does
 (use-package flymake
   :ensure t
   :config
@@ -203,10 +213,10 @@
 
 
 ;; #####
-;; Ivy
+;; `Ivy' -- ?!?!
 (use-package ivy
   :ensure t
-  :diminish (ivy-mode)
+  :diminish (ivy-mode)			; Why???
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
@@ -214,7 +224,7 @@
 
 
 ;; #####
-;; Lorem-ipsum
+;; `Lorem-ipsum' -- put pseudolatin (?) text convinient in testing
 (use-package lorem-ipsum
   :ensure t
   ;; :config (lorem-ipsum-use-default-bindings)
@@ -222,7 +232,7 @@
 
 
 ;; #####
-;; Rainbow-delimiters
+;; `Rainbow-delimiters'
 (use-package rainbow-delimiters
   :ensure t
   :config
@@ -232,7 +242,7 @@
 
 
 ;; #####
-;; Rust-mode -- Emacs mode for Rust programing language
+;; `Rust-mode' -- Emacs mode for Rust programing language
 (use-package rust-mode
   :ensure t
   ;; :config (setq rust-format-on-save t)
@@ -240,7 +250,7 @@
 
 
 ;; #####
-;; Swiper
+;; `Swiper' -- how to describe it????
 (use-package swiper
   :ensure t
   :bind (("C-s" . swiper)
@@ -273,20 +283,20 @@
 
 
 ;; #####
-;; Try -- try package without installing it
+;; `Try' -- try package without installing it
 (use-package try
   :ensure t)
 
 
 ;; #####
-;; Undo-tree
+;; `Undo-tree' -- how to describe it????
 (use-package undo-tree
   :ensure t
   :config (global-undo-tree-mode t))
 
 
 ;; #####
-;; Which-key
+;; `Which-key' -- how to describe it????
 (use-package which-key
   :ensure t
   :config (which-key-mode))

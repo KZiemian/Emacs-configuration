@@ -1,57 +1,3 @@
-;; #################
-;; Basic configuration of build-in features
-
-;; Setting up build-in variables
-(setq inhibit-startup-message t)  ; Disable start up message.
-(setq next-line-add-newlines t)
-(setq sentence-end-double-space nil)
-
-
-;; Setting up predicators
-(fset 'yes-or-no-p 'y-or-n-p)   ; Change question from "yes or no"
-;; to "y or n"
-
-
-
-;; #####
-;; Global modes
-(global-linum-mode t)   ; Shows number of line on the left edge of window.
-(column-number-mode t)	; Shows number of column where point is.
-(winner-mode 1)		; Allow to undo windows changes
-
-
-
-;; #####
-;; Global keychords (????)
-(global-set-key [f1] 'shell)
-(global-set-key [C-tab] 'other-window) 	; Don't work in org mode, correct
-;; that
-
-
-
-
-
-;; #################
-;; Configuration of frames
-(tool-bar-mode -1)
-
-
-
-
-
-;; ##################
-;; Setting up backups management
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
-(setq delete-old-versions 1)
-(setq version-control t)
-(setq vc-make-backup-files t)
-(setq auto-save-file-name-transforms
-      '((".*" "~/.emacs.d/auto-save-list" t)))
-
-
-
-
-
 ;; Ustawienia wbudowanych zmiennych.
 
 ;; (defun set-exec-path-from-shell-PATH ()
@@ -84,25 +30,6 @@
   (scroll-bar-mode -1)
   (set-frame-size (selected-frame) 80 100))
 
-
-
-
-
-;; #################
-;; Configuration of package menager
-(require 'package)
-(setq package-enable-at-startup nil)
-
-;; Setting up list of repositories
-(setq package-archives
-      '(("gnu" . "https://elspa.gnu.org/packages/")))
-(add-to-list 'package-archives
-	     '("marmelade" . "https://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
-
-;; 
-(package-initialize)
 
 
 
@@ -146,25 +73,10 @@
 	  
 
 ;; #####
-;; Achievements ;)
-(use-package achievements
-  :ensure t
-  :config (achievements-mode t))
-
-
-;; #####
 ;; Beacon -- wave showing where point is
 (use-package beacon
   :ensure t
   :config (beacon-mode t))
-
-
-;; #####
-;; Lorem-ipsum
-(use-package lorem-ipsum
-  :ensure t
-  ;; :config (lorem-ipsum-use-default-bindings)
-  )
 
 
 ;; #####
@@ -186,19 +98,6 @@
   :ensure t
   :config (which-key-mode))
 
-
-
-
-
-
-
-
-
-
-(electric-pair-mode t)
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
-(setq apropos-sort-by-score t)
 
 ;; (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
