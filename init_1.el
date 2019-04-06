@@ -42,7 +42,7 @@
 ;; ##################
 ;; Setting up backups management
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
-(setq delete-old-versions -1)
+(setq delete-old-versions 1)
 (setq version-control t)
 (setq vc-make-backup-files t)
 (setq auto-save-file-name-transforms
@@ -230,10 +230,6 @@
 
 ;; Ustawienie tęczowych nawiasów.
 
-(use-package rainbow-delimiters
-  :config
-  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
-
 (use-package multiple-cursors
   :bind
   (("C-S-c C-S-c" . mc/edit-lines)
@@ -264,26 +260,13 @@
 
 ;; Ustawienia LaTeXa.
 
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-;; (setq-default TeX-master nil)
-
-(setq TeX-PDF-mode t)
-
-(setq ispell-program-name "aspell")
-(setq ispell-dictionary "polish")
 
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
-(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 (add-hook 'LaTeX-mode-hook 'auto-complete-mode)
 
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(add-hook 'LaTeX-mode-hook 'rainbow-delimiters-mode)
 (setq reftex-plug-into-AUCTeX t)
-
-(add-hook 'BibTeX-mode-hook 'rainbow-delimiters-mode)
 
 ;; (add-hook 'LaTeX-mode-hook (lambda ()
 ;; 			     (push
@@ -413,13 +396,6 @@
 ;;;;;;;;;;
 ;; Swiper helm
 (define-key global-map (kbd "C-s") 'swiper-helm)
-
-
-
-;;;;;;;;;;;;;;;;;;;;
-;; Undo-tree mode
-
-(global-undo-tree-mode t)
 
 
 
@@ -614,6 +590,6 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 
-;; Usówanie białych znaków na końcu linii
-;; Zablokowane do pracy z CCLDoc
-;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+
+

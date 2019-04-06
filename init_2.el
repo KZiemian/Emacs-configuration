@@ -81,14 +81,6 @@
 
 
 
-
-
-
-
-
-
-
-
 ;; #################
 ;; Configuration of package menager
 (require 'package)

@@ -42,13 +42,11 @@
 
 
 
-
-;; #################
-;; Configuration of frames
-(menu-bar-mode -1)  ; Evaluate with positive integer to show menu
-;; in the top of frame.
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
+;; #####
+;; Global hooks
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; Remove additional white spaces from the end of the line
+;; Comment it out if you work with CCLDoc
 
 
 
@@ -64,6 +62,29 @@
       '((".*" "~/.emacs.d/auto-save-list" t)))
 
 
+
+
+
+;; #################
+;; Configuration of frames
+(menu-bar-mode -1)  ; Evaluate with positive integer to show menu
+;; in the top of frame.
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(set-frame-size (selected-frame) 80 100)
+
+
+
+
+
+;; #################
+;; Setting up autoscorrection
+;; (setq ispell-program-name "aspell")	; By default is `aspell'
+(setq ispell-dictionary "english")
+;; (setq ispell-dictionary "polish")
+
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 
 
 
@@ -146,8 +167,7 @@
   (global-set-key [remap other-window] 'ace-window)
   (custom-set-faces
    '(aw-leading-char-face
-     ((t (:inherit ace-jump-face-foreground :height 3.0)))))
-  )
+     ((t (:inherit ace-jump-face-foreground :height 3.0))))))
 	  
 
 ;; #####
@@ -169,6 +189,18 @@
 (use-package counsel
   :ensure t)
 
+;; #####
+;; Flymake
+(use-package flymake
+  :ensure t
+  :config
+  (defun flymake-get-tex-args (file-name)
+    (list "pdflatex"
+	  (list "-file-line-error" "-draftmode" "-interaction=nonstopmode"
+		file-name)))
+  (add-hook 'LaTeX-mode-hook 'flymake-mode)
+  )
+
 
 ;; #####
 ;; Ivy
@@ -187,6 +219,16 @@
   :ensure t
   ;; :config (lorem-ipsum-use-default-bindings)
   )
+
+
+;; #####
+;; Rainbow-delimiters
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  (add-hook 'LaTeX-mode-hook #'rainbow-delimiters-mode)
+  (add-hook 'BibTeX-mode-hook #'rainbow-delimiters-mode))
 
 
 ;; #####
@@ -215,7 +257,7 @@
 	 ("C-c j" . 'counsel-git-grep)
 	 ("C-c k" . 'counsel-ag)
 	 ("C-x l" . 'counsel-locate)
-	 ("C-S-o" . 'counsel-rythmbox)
+	 ("C-S-o" . 'counsel-rhythmbox)
 	 ;; Alternative keychords
 	 ;; ("<f4>" . 'ivy-resume)
 	 ;; ("<f2> f" . 'counsel-describe-function)
@@ -227,7 +269,7 @@
   ;; :config
   ;; enable this if you want `swiper' to use it
   ;; (setq search-default-mode #'char-fold-to-regexp)
-)
+  )
 
 
 ;; #####
@@ -253,6 +295,22 @@
 
 
 
+;; #################
+;; Configuration of LaTeX-mode
+
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq TeX-save-query nil)
+(setq TeX-PDF-mode t)
+;; (setq-default TeX-master nil)  ; I don't know what this line do?!?!
+
+
+
+
+
+
+
+
 ;; ###########################
 ;; Code added by Custom
 
@@ -271,4 +329,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+ '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0))))
+ '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "dark green"))))
+ '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "blue"))))
+ '(rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "dark violet"))))
+ '(rainbow-delimiters-depth-4-face ((t (:inherit rainbow-delimiters-base-face :foreground "yellow"))))
+ '(rainbow-delimiters-depth-5-face ((t (:inherit rainbow-delimiters-base-face :foreground "black"))))
+ '(rainbow-delimiters-depth-6-face ((t (:inherit rainbow-delimiters-base-face :foreground "aquamarine4"))))
+ '(rainbow-delimiters-depth-7-face ((t (:inherit rainbow-delimiters-base-face :foreground "gold"))))
+ '(rainbow-delimiters-depth-8-face ((t (:inherit rainbow-delimiters-base-face :foreground "saddle brown"))))
+ '(rainbow-delimiters-depth-9-face ((t (:inherit rainbow-delimiters-base-face :foreground "MistyRose4"))))
+ '(rainbow-delimiters-mismatched-face ((t (:inherit (rainbow-delimiters-unmatched-face rainbow-delimiters-base-face)))))
+ '(rainbow-delimiters-unmatched-face ((t (:inherit rainbow-delimiters-base-face :foreground "red")))))
