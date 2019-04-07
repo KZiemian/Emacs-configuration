@@ -35,18 +35,6 @@
 
 
 
-;; #################
-;; Bootstrap `use-package'
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-;; (setq use-package-verbose t)
-;; (setq load-prefer-newer t)
-
-
-
-
 
 ;; ###########################
 ;; Installing packeges
@@ -70,33 +58,13 @@
   (custom-set-faces
    '(aw-leading-char-face
      ((t (:inherit ace-jump-face-foreground :height 3.0))))))
-	  
+
 
 ;; #####
 ;; Beacon -- wave showing where point is
 (use-package beacon
   :ensure t
   :config (beacon-mode t))
-
-
-;; #####
-;; Try -- try package without installing it
-(use-package try
-  :ensure t)
-
-
-;; #####
-;; Undo-tree
-(use-package undo-tree
-  :ensure t
-  :config (global-undo-tree-mode t))
-
-
-;; #####
-;; Which-key
-(use-package which-key
-  :ensure t
-  :config (which-key-mode))
 
 
 ;; (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
@@ -117,17 +85,6 @@
   (setq recentf-max-saved-items 500
 	recentf-max-menu-items 500))
 
-;; Avy - super paczka do szybkiego poruszania się.
-(require 'ivy)
-(use-package avy
-  :bind (("C-:" . avy-goto-char)
-	 ("C-'" . avy-goto-char-2)
-	 ("M-g g" . avy-goto-line)
-	 ("M-g M-g" . avy-goto-line)
-	 ("M-g w" . avy-goto-word-1)
-	 ("M-g e" . avy-goto-word-0)))
-
-;; Ustawienie tęczowych nawiasów.
 
 (use-package multiple-cursors
   :bind
@@ -141,9 +98,6 @@
 ;; Ustawienia trybu glownego Text
 
 (add-hook 'text-mode-hook 'auto-complete-mode)
-(add-hook 'text-mode-hook 'visual-line-mode)
-(add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'text-mode-hook 'flyspell-buffer)
 
 
 
@@ -159,13 +113,6 @@
 
 ;; Ustawienia LaTeXa.
 
-
-(add-hook 'LaTeX-mode-hook 'visual-line-mode)
-(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
-(add-hook 'LaTeX-mode-hook 'auto-complete-mode)
-
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(setq reftex-plug-into-AUCTeX t)
 
 ;; (add-hook 'LaTeX-mode-hook (lambda ()
 ;; 			     (push
@@ -487,8 +434,3 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-
-
-
-

@@ -32,22 +32,22 @@
 
 
 
-
 ;; #####
-;; Global modes
+;; Global minor modes
 (global-linum-mode t)   ; Shows number of line on the left edge of window.
 (column-number-mode t)	; Shows number of column where point is.
 (winner-mode 1)		; Allow to undo windows changes
 (electric-pair-mode t)	; Toggle automatic parenthis pairing
+(visual-line-mode 1)	; Line of text are splited between buffers' line
 
-
+(setq outline-minor-mode-prefix "\C-c \C-o") ; Somethings don't work
 
 
 
 ;; #####
 ;; Global hooks
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-;; Remove additional white spaces from the end of the line
+;; Remove additional white spaces from the end of the line and file
 ;; Comment it out if you work with CCLDoc
 
 
@@ -56,11 +56,11 @@
 
 ;; #################
 ;; Setting up backups management
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
-(setq delete-old-versions 1)
-(setq version-control t)
-(setq vc-make-backup-files t)
-(setq auto-save-file-name-transforms
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups"))
+      delete-old-versions 1
+      version-control t
+      vc-make-backup-files t
+      auto-save-file-name-transforms
       '((".*" "~/.emacs.d/auto-save-list" t)))
 
 
@@ -89,6 +89,9 @@
 ;; (setq ispell-program-name "aspell")	; By default is `aspell'
 (setq ispell-dictionary "english")
 ;; (setq ispell-dictionary "polish")
+
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook 'flyspell-buffer)
 
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
@@ -128,11 +131,10 @@
 
 ;; Setting up list of repositories
 (setq package-archives
-      '(("gnu" . "https://elspa.gnu.org/packages/")))
-(add-to-list 'package-archives
-	     '("marmelade" . "https://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
+      '(("gnu" . "https://elspa.gnu.org/packages/")
+	("marmelade" . "https://marmalade-repo.org/packages/")
+	("melpa" . "https://melpa.org/packages/")))
+
 
 ;;
 (package-initialize)
@@ -187,6 +189,28 @@
 
 
 ;; #####
+;; `Auto-complete'
+(use-package auto-complete
+  :ensure t
+  :config
+  (ac-config-default)
+  (global-auto-complete-mode t))
+
+
+;; #####
+;; `Avy' -- quick navigation in windows
+(use-package avy
+  :ensure t
+  :bind (("C-:" . avy-goto-char)
+	 ("C-'" . avy-goto-char-2)
+	 ("M-g g" . avy-goto-line)
+	 ("M-g M-g" . avy-goto-line)
+	 ("M-g w" . avy-goto-word-1)
+	 ("M-g e" . avy-goto-word-0)))
+;; In Custoimize set `avy-style' to "Pre" or anything you prefere
+
+
+;; #####
 ;; `Beacon' -- wave showing where point is
 (use-package beacon
   :ensure t
@@ -221,6 +245,12 @@
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   (setq ivy-display-style 'fancy))
+
+
+;; #####
+;; `LaTeX-pretty-symbols' -- display unicode in place of LaTeX commands
+(use-package latex-pretty-symbols
+  :ensure t)
 
 
 ;; #####
@@ -308,15 +338,49 @@
 ;; #################
 ;; Configuration of LaTeX-mode
 
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq TeX-save-query nil)
-(setq TeX-PDF-mode t)
+(setq TeX-auto-save t
+      TeX-parse-self t
+      TeX-save-query nil
+      TeX-PDF-mode t)
 ;; (setq-default TeX-master nil)  ; I don't know what this line do?!?!
 
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-mode-hook 'auto-complete-mode)
+(add-hook 'outline-minor-mode (lambda () (outline-minor-mode 1)))
 
 
 
+;; #####
+;; Reftex
+(autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
+(autoload 'turn-on-reftex "reftex" "RefTeX Minor Mode" nil)
+(autoload 'reftex-citation "reftex-cite" "Mace citation" nil)
+(autoload 'reftex-index-phrase-mode "reftex-index" "Pharse Mode" t)
+
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(add-hook 'latex-mode-hook 'turn-on-reftex)
+(add-hook 'reftex-load-hook 'imenu-add-menubar-index) ; Maybe this should be
+;; comment out
+
+(setq reftex-plug-into-AUCTeX t)	; I don't know what this do????
+
+(setq LaTeX-eqnarray-label "eq"
+      LaTeX-equation-label "eq"
+      LaTeX-figure-label "fig"
+      LaTeX-table-label "tab"
+      LaTeX-myChapter-label "chap"
+      TeX-auto-save t
+      TeX-newline-function 'reindent-then-newline-and-indent
+      TeX-parse-self t
+      TeX-style-path '("style/" "auto/"
+		       "/usr/share/emacs25/site-lisp/auctex/style/"
+		       "/var/lib/auctex/emacs25"
+		       "/usr/local/share/emacs25/site-lisp/auctex/style/")
+      LaTeX-section-hook '(LaTeX-section-heading
+			   LaTeX-section-title
+			   LaTeX-section-toc
+			   LaTeX-section-section
+			   LaTeX-section-label))
 
 
 
@@ -329,10 +393,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(avy-case-fold-search t)
+ '(avy-style (quote pre))
  '(load-prefer-newer t)
  '(package-selected-packages
    (quote
-    (counsel undo-tree try swiper-helm slime rust-playground rainbow-delimiters org-bullets lorem-ipsum inf-ruby impatient-mode helm-gtags ggtags function-args cargo beacon auto-complete auto-compile auctex-latexmk aggressive-indent achievements ace-window)))
+    (latex-pretty-symbols counsel undo-tree try swiper-helm slime rust-playground rainbow-delimiters org-bullets lorem-ipsum inf-ruby impatient-mode helm-gtags ggtags function-args cargo beacon auto-complete auto-compile auctex-latexmk aggressive-indent achievements ace-window)))
  '(use-package-verbose t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
