@@ -1,7 +1,7 @@
 ;; #################
 ;; First steps of initialization
 ;; Set up `windows-system' at the begining to avoid short displaying of
-;; it default look at initialization
+;; it default look at initialization (Daniel Mai say so)
 
 
 ;; #########
@@ -35,6 +35,42 @@
 (add-to-list 'package-archives
 	     '("org" . "http://orgmode.org/elpa/") t)  ; This may be
 ;; redundant, but for "spokoju sumiania" I left if here
+
+;; ??????
+(when (boundp 'package-pinned-packages)
+  (setq package-pinned-packages
+	'((org-plus-contrib . "org"))))
+
+
+;; ???????
+(package-initialize)
+
+
+
+
+
+;; #################
+;; `Use-package' -- bookstraping package to manage packages
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; (setq use-package-verbose t)
+;; (setq load-prefer-newer t)
+
+
+;; From `use-package' README
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
+
+
+
+
+;; #################
+;; Load the `config.org' file
+(org-babel-load-file (concat user-emacs-directory "config.org"))
+
 
 
 
@@ -162,21 +198,14 @@
 
 
 
-;;
-(package-initialize)
 
 
 
 
 
-;; #################
-;; `Use-package' -- bookstraping package to manage packages
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
 
-;; (setq use-package-verbose t)
-;; (setq load-prefer-newer t)
+
+
 
 
 
