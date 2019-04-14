@@ -55,8 +55,8 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; (setq use-package-verbose t)
-;; (setq load-prefer-newer t)
+(setq use-package-verbose t
+      load-prefer-newer t)
 
 
 ;; From `use-package' README

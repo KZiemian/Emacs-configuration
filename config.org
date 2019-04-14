@@ -3,6 +3,10 @@
 
 Structure of this file is based on Daniel Mai Emacs configuration https://github.com/danielmai/.emacs.d/
 
+
+
+
+
 * Basic configuration of build-in features
 
 ** Setting up built-in variables
@@ -89,16 +93,27 @@ Change question from "yes or no" to "y or n".
 
 
 
-* **Org-mode** -- configuration of gigant `org-mode'
+
+
+* **Org-mode** -- configuration of giant `org-mode'
 #+BEGIN_SRC emacs-lisp
   (use-package org-bullets
     :ensure t
-    :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+    :pin org)
+#+END_SRC
+
+** **Org-bullets**
+#+BEGIN_SRC emacs-lisp
+  (use-package org-bullets
+  :ensure t
+  :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 #+END_SRC
 
 
 
-* Packages
+
+
+* General packages ????
 
 ** Ace-window -- moveing to numbered window
 #+BEGIN_SRC emacs-lisp
@@ -111,7 +126,7 @@ Change question from "yes or no" to "y or n".
        ((t (:inherit ace-jump-face-foreground :height 3.0))))))
 #+END_SRC
 
-** `Achievements' ;)
+** `Achievements' (;-)
 #+BEGIN_SRC emacs-lisp
   (use-package achievements
     :ensure t
@@ -147,7 +162,7 @@ In Custoimize set `avy-style' to "Pre" or anything you prefer.
     :config (beacon-mode t))
 #+END_SRC
 
-** `Color-theme' -- packages many Emacs' themes
+** `Color-theme-modern' -- packages many Emacs' themes
 #+BEGIN_SRC emacs-lisp
   (use-package color-theme-modern
     :ensure t
@@ -201,20 +216,13 @@ In Custoimize set `avy-style' to "Pre" or anything you prefer.
 
 ** `Rainbow-delimiters'
 #+BEGIN_SRC emacs-lisp
-  (use-package rainbow-delimiters
-    :ensure t
-    :config
-    (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-    (add-hook 'LaTeX-mode-hook #'rainbow-delimiters-mode)
-    (add-hook 'BibTeX-mode-hook #'rainbow-delimiters-mode))
-#+END_SRC
-
-** `Rust-mode' -- Emacs mode for Rust programing language
-#+BEGIN_SRC emacs-lisp
-  (use-package rust-mode
-    :ensure t
-    ;; :config (setq rust-format-on-save t)
-    )
+    (use-package rainbow-delimiters
+      :ensure t
+      :config
+      (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+      (add-hook 'LaTeX-mode-hook 'rainbow-delimiters-mode)
+      (add-hook 'BibTeX-mode-hook 'rainbow-delimiters-mode)
+      (add-hook 'org-mode-hook 'rainbow-delimiters-mode))
 #+END_SRC
 
 ** `Swiper' -- how to describe it????
@@ -272,7 +280,10 @@ In Custoimize set `avy-style' to "Pre" or anything you prefer.
 
 
 
+
+
 * Configuration of LaTeX in Emacs
+
 ** General LaTeX settings
 #+BEGIN_SRC emacs-lisp
   (setq TeX-auto-save t
@@ -323,4 +334,18 @@ In Custoimize set `avy-style' to "Pre" or anything you prefer.
                              LaTeX-section-toc
                              LaTeX-section-section
                              LaTeX-section-label))
+#+END_SRC
+
+
+
+
+
+* Configuration of IDEs inside Emacs and appropriate packages
+
+** `Rust-mode' -- Emacs mode for Rust programming language
+#+BEGIN_SRC emacs-lisp
+  (use-package rust-mode
+    :ensure t
+    ;; :config (setq rust-format-on-save t)
+    )
 #+END_SRC
