@@ -1,8 +1,48 @@
 ;; #################
+;; First steps of initialization
+;; Set up `windows-system' at the begining to avoid short displaying of
+;; it default look at initialization
+
+
+;; #########
+;; Configuration of frames
+(when window-system
+  (menu-bar-mode -1)  ; Evaluate with positive integer to show menu
+  ;; in the top of frame.
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tooltip-mode -1)  ; I don't know what this doing, but I never use
+  ;; tooltips, so this probably doesn't matter.
+  (set-frame-size (selected-frame) 80 100))
+
+
+(setq inhibit-startup-message t)  ; Disable start up message.
+
+
+
+;; #################
+;; Configuration of package menager
+(require 'package)
+(setq package-enable-at-startup nil)
+
+;; Setting up list of repositories
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives
+	     '("gnu" . "https://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives
+	     '("marmelade" . "https://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+	     '("org" . "http://orgmode.org/elpa/") t)  ; This may be
+;; redundant, but for "spokoju sumiania" I left if here
+
+
+
+;; #################
 ;; Basic configuration of build-in features
 
 ;; Setting up built-in variables
-(setq inhibit-startup-message t)  ; Disable start up message.
+
 (setq next-line-add-newlines t)
 (setq sentence-end-double-space nil)
 
@@ -38,7 +78,7 @@
 (column-number-mode t)	; Shows number of column where point is.
 (winner-mode 1)		; Allow to undo windows changes
 (electric-pair-mode t)	; Toggle automatic parenthis pairing
-(visual-line-mode 1)	; Line of text are splited between buffers' line
+(global-visual-line-mode 1)	; Line of text are splited between buffers' line
 
 (setq outline-minor-mode-prefix "\C-c \C-o") ; Somethings don't work
 
@@ -67,13 +107,8 @@
 
 
 
-;; #################
-;; Configuration of frames
-(menu-bar-mode -1)  ; Evaluate with positive integer to show menu
-;; in the top of frame.
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(set-frame-size (selected-frame) 80 100)
+
+
 
 
 
@@ -124,16 +159,7 @@
 
 
 
-;; #################
-;; Configuration of package menager
-(require 'package)
-(setq package-enable-at-startup nil)
 
-;; Setting up list of repositories
-(setq package-archives
-      '(("gnu" . "https://elspa.gnu.org/packages/")
-	("marmelade" . "https://marmalade-repo.org/packages/")
-	("melpa" . "https://melpa.org/packages/")))
 
 
 ;;
@@ -215,6 +241,14 @@
 (use-package beacon
   :ensure t
   :config (beacon-mode t))
+
+
+;; #####
+;; `Color-theme' -- packages many Emacs' themes
+(use-package color-theme-modern
+  :ensure t
+  ;; :config (load-theme 'wombat t)
+  )
 
 
 ;; #####
@@ -385,6 +419,7 @@
 
 
 
+
 ;; ###########################
 ;; Code added by Custom
 
@@ -393,12 +428,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
  '(avy-case-fold-search t)
  '(avy-style (quote pre))
+ '(custom-enabled-themes (quote (wombat)))
+ '(custom-safe-themes
+   (quote
+    ("04232a0bfc50eac64c12471607090ecac9d7fd2d79e388f8543d1c5439ed81f5" default)))
  '(load-prefer-newer t)
  '(package-selected-packages
    (quote
-    (latex-pretty-symbols counsel undo-tree try swiper-helm slime rust-playground rainbow-delimiters org-bullets lorem-ipsum inf-ruby impatient-mode helm-gtags ggtags function-args cargo beacon auto-complete auto-compile auctex-latexmk aggressive-indent achievements ace-window)))
+    (badger-theme badwolf-theme zenburn-theme beacon latex-pretty-symbols undo-tree try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
  '(use-package-verbose t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -406,14 +447,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0))))
- '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "dark green"))))
- '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "blue"))))
- '(rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "dark violet"))))
+ '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "lawn green"))))
+ '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "cyan"))))
+ '(rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "light gray"))))
  '(rainbow-delimiters-depth-4-face ((t (:inherit rainbow-delimiters-base-face :foreground "yellow"))))
- '(rainbow-delimiters-depth-5-face ((t (:inherit rainbow-delimiters-base-face :foreground "black"))))
+ '(rainbow-delimiters-depth-5-face ((t (:inherit rainbow-delimiters-base-face :foreground "purple"))))
  '(rainbow-delimiters-depth-6-face ((t (:inherit rainbow-delimiters-base-face :foreground "aquamarine4"))))
- '(rainbow-delimiters-depth-7-face ((t (:inherit rainbow-delimiters-base-face :foreground "gold"))))
- '(rainbow-delimiters-depth-8-face ((t (:inherit rainbow-delimiters-base-face :foreground "saddle brown"))))
- '(rainbow-delimiters-depth-9-face ((t (:inherit rainbow-delimiters-base-face :foreground "MistyRose4"))))
+ '(rainbow-delimiters-depth-7-face ((t (:inherit rainbow-delimiters-base-face :foreground "khaki1"))))
+ '(rainbow-delimiters-depth-8-face ((t (:inherit rainbow-delimiters-base-face :foreground "sienna"))))
+ '(rainbow-delimiters-depth-9-face ((t (:inherit rainbow-delimiters-base-face :foreground "gold"))))
  '(rainbow-delimiters-mismatched-face ((t (:inherit (rainbow-delimiters-unmatched-face rainbow-delimiters-base-face)))))
  '(rainbow-delimiters-unmatched-face ((t (:inherit rainbow-delimiters-base-face :foreground "red")))))

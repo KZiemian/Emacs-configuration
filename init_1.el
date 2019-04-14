@@ -22,20 +22,6 @@
 
 
 
-;; Ustawienia ramy
-
-(when window-system
-  (tooltip-mode -1)
-  (menu-bar-mode 1)
-  (scroll-bar-mode -1)
-  (set-frame-size (selected-frame) 80 100))
-
-
-
-
-
-
-
 ;; ###########################
 ;; Installing packeges
 
