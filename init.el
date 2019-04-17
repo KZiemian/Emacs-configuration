@@ -7,8 +7,9 @@
 ;; #########
 ;; Configuration of frames
 (when window-system
-  (menu-bar-mode -1)  ; Evaluate with positive integer to show menu
-  ;; in the top of frame.
+  (menu-bar-mode -1)
+  ;; Evaluate with positive integer to show menu in the top of frame.
+  ;; (menu-bar-mode 1)
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
   (tooltip-mode -1)  ; I don't know what this doing, but I never use
@@ -67,10 +68,9 @@
 
 
 
-;; #################
-;; Load the `config.org' file
+;; ;; #################
+;; ;; Load the `config.org' file
 (org-babel-load-file (concat user-emacs-directory "config.org"))
-
 
 
 
