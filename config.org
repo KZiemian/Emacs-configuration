@@ -1,7 +1,7 @@
 #+TITLE: Emacs Configuration
 
 
-Structure of this file is based on Daniel Mai Emacs configuration https://github.com/danielmai/.emacs.d/
+Structure of this file is based on Daniel Mai Emacs configuration https://github.com/danielmai/.emacs.d/.
 
 
 
@@ -118,7 +118,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 * General packages ????
   These packages are used by wild area of buffers.
 
-** Ace-window -- moveing to numbered window
+** Ace-window -- moving to numbered window
    #+BEGIN_SRC emacs-lisp
      (use-package ace-window
        :ensure t
@@ -361,14 +361,33 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 * Configuration of IDEs inside Emacs and appropriate packages
 
+** For many languages
+*** Yasnippet - you can past a snippet of code
+    #+BEGIN_SRC emacs-lisp
+      (use-package yasnippet
+	:ensure t
+	:init (yas-global-mode 1))
+    #+END_SRC
+
 ** Python
-   #+BEGIN_SRC emacs-lisp
+*** Elpy -- auto-completion???
+    #+BEGIN_SRC emacs-lisp
+      (use-package elpy
+	:ensure t
+	:defer t
+	:init (advice-add 'python-mode :before 'elpy-enable))
+    #+END_SRC
+
+*** Jedi -- auto-completion???
+    #+BEGIN_SRC emacs-lisp
      (use-package jedi
        :ensure t
        :init
        (add-hook 'python-mode-hook 'jedi:setup)
-       (add-hook 'python-mode-hook 'jedi:ac-setup))
-   #+END_SRC
+       (add-hook 'python-mode-hook 'jedi:ac-setup)
+       :config
+       (setq jedi:complet-on-dot t))
+    #+END_SRC
 
 ** `Rust-mode' -- Emacs mode for Rust programming language
    #+BEGIN_SRC emacs-lisp

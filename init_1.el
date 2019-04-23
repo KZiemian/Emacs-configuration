@@ -27,30 +27,8 @@
 
 
 ;; ##########
-;; Org-mode configuration
-(use-package org-bullets
-  :ensure t
-  :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 
-
-
-;; #####
-;; Ace-window -- moveing to numbered window
-(use-package ace-window
-  :ensure t
-  :config
-  (global-set-key [remap other-window] 'ace-window)
-  (custom-set-faces
-   '(aw-leading-char-face
-     ((t (:inherit ace-jump-face-foreground :height 3.0))))))
-
-
-;; #####
-;; Beacon -- wave showing where point is
-(use-package beacon
-  :ensure t
-  :config (beacon-mode t))
 
 
 ;; (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
