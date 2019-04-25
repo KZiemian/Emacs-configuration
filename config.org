@@ -75,9 +75,9 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 ** Save customize settings to separate file, not to [[file:init.el][init.el]] file.
    #+BEGIN_SRC emacs-lisp
-     (setq custom-file
-	   (expand-file-name "customize.el" user-emacs-directory))
-     (load custom-file)
+     ;; (setq custom-file
+     ;;       (expand-file-name "customize.el" user-emacs-directory))
+     ;; (load custom-file)
    #+END_SRC
 
 ** Setting up auto-correction
