@@ -97,14 +97,16 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 
 
-* **Org-mode** -- configuration of giant `org-mode'
+* Org-mode
+  Configuration of giant **org-mode**.
   #+BEGIN_SRC emacs-lisp
     (use-package org
       :ensure t
       :pin org)
   #+END_SRC
 
-** **Org-bullets**
+** Org-bullets
+   Unicode bullets for **org-mode**
    #+BEGIN_SRC emacs-lisp
      (use-package org-bullets
        :ensure t
@@ -118,7 +120,8 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 * General packages ????
   These packages are used by wild area of buffers.
 
-** Ace-window -- moving to numbered window
+** Ace-window
+   Fast moving to numbered windows.
    #+BEGIN_SRC emacs-lisp
      (use-package ace-window
        :ensure t
@@ -129,14 +132,14 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 	  ((t (:inherit ace-jump-face-foreground :height 3.0))))))
    #+END_SRC
 
-** `Achievements' (;-)
+** Achievements (;-)
    #+BEGIN_SRC emacs-lisp
      (use-package achievements
        :ensure t
        :config (achievements-mode t))
    #+END_SRC
 
-** `Auto-complete'
+** Auto-complete
    #+BEGIN_SRC emacs-lisp
      (use-package auto-complete
        :ensure t
@@ -145,8 +148,9 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        (global-auto-complete-mode t))
    #+END_SRC
 
-** `Avy' -- quick navigation in windows
-   In Custoimize set `avy-style' to "Pre" or anything you prefer.
+** Avy
+   Quick navigation in windows. In **Custoimize** set "avy-style" to "Pre"
+   or anything you prefer.
    #+BEGIN_SRC emacs-lisp
      (use-package avy
        :ensure t
@@ -158,14 +162,16 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 	      ("M-g e" . avy-goto-word-0)))
    #+END_SRC
 
-** `Beacon' -- wave showing where point is
+** Beacon
+   Wave showing where point is
    #+BEGIN_SRC emacs-lisp
      (use-package beacon
        :ensure t
        :config (beacon-mode t))
    #+END_SRC
 
-** `Color-theme-modern' -- packages many Emacs' themes
+** Color-theme-modern
+   Packages with many Emacs' themes
    #+BEGIN_SRC emacs-lisp
      (use-package color-theme-modern
        :ensure t
@@ -173,13 +179,15 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        )
    #+END_SRC
 
-** `Counsel' -- need for Swiper packages
+** Counsel
+   Need for Swiper packages
    #+BEGIN_SRC emacs-lisp
      (use-package counsel
        :ensure t)
    #+END_SRC
 
-** `Ivy' -- ?!?!
+** Ivy
+   ?!?!
    #+BEGIN_SRC emacs-lisp
      (use-package ivy
        :ensure t
@@ -198,7 +206,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        )
    #+END_SRC
 
-** `Rainbow-delimiters'
+** Rainbow-delimiters
    #+BEGIN_SRC emacs-lisp
      (use-package rainbow-delimiters
        :ensure t
