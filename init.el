@@ -68,8 +68,8 @@
 
 
 
-;; ;; #################
-;; ;; Load the `config.org' file
+;; #################
+;; Load the `config.org' file
 (org-babel-load-file (concat user-emacs-directory "config.org"))
 
 

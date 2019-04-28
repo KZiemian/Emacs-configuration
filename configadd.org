@@ -1,1 +1,66 @@
 #+TITLE: Additional configuration to Emacs
+
+
+File for configuration that can be useful and also problematic, so not always I want it turned on. Like things that make writing of code to easy and fast, make thinking of nuts and bolts unnecessary, what is very bad when you learn new language.
+
+
+* General packages
+  Flycheck and flymake are powerful, but problematic so I temporally disable
+  them.
+** Flycheck -- ????
+   #+BEGIN_SRC emacs-lisp
+     ;; (use-package flycheck
+     ;;   :ensure t
+     ;;   :init (global-flycheck-mode t))
+
+   #+END_SRC
+
+** `Flymake' -- I don't know what it does
+   #+BEGIN_SRC emacs-lisp
+     ;; (use-package flymake
+     ;;   :ensure t
+     ;;   :config
+     ;;   (defun flymake-get-tex-args (file-name)
+     ;;     (list "pdflatex"
+     ;; 	  (list "-file-line-error" "-draftmode"
+     ;; 		"-interaction=nonstopmode"
+     ;; 		file-name)))
+     ;;   (add-hook 'LaTeX-mode-hook 'flymake-mode)
+     ;;   )
+   #+END_SRC
+
+
+
+* Configuration of LaTeX in Emacs
+
+* Powerful configuration of IDEs inside Emacs and appropriate packages
+  They so powerful that using them may be detrimental to you knowledge of
+  language.
+
+** For many languages
+*** Yasnippet - you can past a snippet of code
+    #+BEGIN_SRC emacs-lisp
+      (use-package yasnippet
+	:ensure t
+	:init (yas-global-mode 1))
+    #+END_SRC
+
+** Python
+*** Elpy -- auto-completion???
+    #+BEGIN_SRC emacs-lisp
+      (use-package elpy
+	:ensure t
+	:defer t
+	:init (advice-add 'python-mode :before 'elpy-enable))
+    #+END_SRC
+
+*** Jedi -- auto-completion???
+    #+BEGIN_SRC emacs-lisp
+     (use-package jedi
+       :ensure t
+       :init
+       (add-hook 'python-mode-hook 'jedi:setup)
+       (add-hook 'python-mode-hook 'jedi:ac-setup)
+       :config
+       (setq jedi:complet-on-dot t))
+    #+END_SRC

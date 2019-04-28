@@ -179,27 +179,6 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        :ensure t)
    #+END_SRC
 
-** Flycheck -- ????
-   #+BEGIN_SRC emacs-lisp
-     (use-package flycheck
-       :ensure t
-       :init (global-flycheck-mode t))
-   #+END_SRC
-
-** `Flymake' -- I don't know what it does
-   #+BEGIN_SRC emacs-lisp
-     (use-package flymake
-       :ensure t
-       :config
-       (defun flymake-get-tex-args (file-name)
-	 (list "pdflatex"
-	       (list "-file-line-error" "-draftmode"
-		     "-interaction=nonstopmode"
-		     file-name)))
-       (add-hook 'LaTeX-mode-hook 'flymake-mode)
-       )
-   #+END_SRC
-
 ** `Ivy' -- ?!?!
    #+BEGIN_SRC emacs-lisp
      (use-package ivy
@@ -287,7 +266,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 
 
-* Configuration of LaTeX in Emacs
+
 
 ** AUCTeX ; Trzeba go instalować przez manger paciektów
    #+BEGIN_SRC emacs-lisp
@@ -360,34 +339,6 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 
 * Configuration of IDEs inside Emacs and appropriate packages
-
-** For many languages
-*** Yasnippet - you can past a snippet of code
-    #+BEGIN_SRC emacs-lisp
-      (use-package yasnippet
-	:ensure t
-	:init (yas-global-mode 1))
-    #+END_SRC
-
-** Python
-*** Elpy -- auto-completion???
-    #+BEGIN_SRC emacs-lisp
-      (use-package elpy
-	:ensure t
-	:defer t
-	:init (advice-add 'python-mode :before 'elpy-enable))
-    #+END_SRC
-
-*** Jedi -- auto-completion???
-    #+BEGIN_SRC emacs-lisp
-     (use-package jedi
-       :ensure t
-       :init
-       (add-hook 'python-mode-hook 'jedi:setup)
-       (add-hook 'python-mode-hook 'jedi:ac-setup)
-       :config
-       (setq jedi:complet-on-dot t))
-    #+END_SRC
 
 ** `Rust-mode' -- Emacs mode for Rust programming language
    #+BEGIN_SRC emacs-lisp
