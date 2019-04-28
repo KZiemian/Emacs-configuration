@@ -21,6 +21,8 @@
 
 
 
+
+
 ;; #################
 ;; Configuration of package menager
 (require 'package)
@@ -68,14 +70,17 @@
 
 
 
+
 ;; #################
 ;; Load the `config.org' file
 (org-babel-load-file (concat user-emacs-directory "config.org"))
 
 
-
-
-
+;; #####
+;; Load `configadd.org' file
+;; With configuraiotn of problematic and "too useful" Emacs
+;; setting and packages.
+(org-babel-load-file (concat user-emacs-directory "configadd.org"))
 
 
 

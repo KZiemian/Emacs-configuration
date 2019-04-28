@@ -301,7 +301,10 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    #+END_SRC
 
 ** Reftex
-   ,,Folding and unfolding parts of the text might be confusing, though, but there’s another way to navigate through a big TeX file, and you can use Reftex mode for it. Reftex is a mode that helps with managing references (full documentation), but it can also be used to create a table of contents for a TeX file and to navigate using it. Here is my configuration for Reftex from my .emacs file:'' https://piotr.is/2010/emacs-as-the-ultimate-latex-editor/
+   ,,Folding and unfolding parts of the text might be confusing, though,
+   but there’s another way to navigate through a big TeX file, and you can
+   use Reftex mode for it. Reftex is a mode that helps with managing
+   references (full documentation), but it can also be used to create a table of contents for a TeX file and to navigate using it. Here is my configuration for Reftex from my .emacs file:'' https://piotr.is/2010/emacs-as-the-ultimate-latex-editor/
    #+BEGIN_SRC emacs-lisp
      (autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
      (autoload 'turn-on-reftex "reftex" "RefTeX Minor Mode" nil)
