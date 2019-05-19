@@ -23,33 +23,3 @@
 
 (setq ibuffer-default-sorting-mode 'major-mode)  ; Sorts buffers
 ;; in buffers list by major mode of buffer
-
-
-
-
-
-;; #################
-;; Configuration of package menager
-(require 'package)
-(setq package-enable-at-startup nil)
-
-;; Setting up list of repositories
-(setq package-archives
-      '(("gnu" . "https://elspa.gnu.org/packages/")))
-(add-to-list 'package-archives
-	     '("marmelade" . "https://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
-
-;;
-(package-initialize)
-
-
-
-
-
-;; #################
-;; Bootstrap `use-package'
-(unless (package-installed-p 'use-package)
-  (package-refres-contents)
-  (package-install 'use-package))

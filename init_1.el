@@ -296,62 +296,6 @@
 
 ;; Ustawienie tematu Emacsa.
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#c0c0c0" "#336c6c" "#806080" "#0f2050" "#732f2c" "#23733c" "#6c1f1c" "#232333"])
- '(avy-style (quote pre))
- '(avy-styles-alist (quote ((avy-goto-char . pre))))
- '(custom-enabled-themes (quote (tango-dark)))
- '(custom-safe-themes
-   (quote
-    ("4af6fad34321a1ce23d8ab3486c662de122e8c6c1de97baed3aa4c10fe55e060" "76659fd7fc5ce57d14dfb22b30aac6cf0d4eb0a279f4131be3945d3cfff10bc6" "4f5bb895d88b6fe6a983e63429f154b8d939b4a8c581956493783b2515e22d6d" "1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" default)))
- '(fci-rule-color "#c7c7c7")
- '(nrepl-message-colors
-   (quote
-    ("#336c6c" "#205070" "#0f2050" "#806080" "#401440" "#6c1f1c" "#6b400c" "#23733c")))
- '(package-selected-packages
-   (quote
-    (org-bullets swiper-helm inf-ruby multiple-cursors rust-playground cargo rust-mode beacon auctex-latexmk auctex avy use-package undo-tree slime rainbow-delimiters impatient-mode helm-gtags ggtags function-args auto-complete auto-compile aggressive-indent achievements)))
- '(rainbow-delimiters nil)
- '(rainbow-delimiters-max-face-count 7)
- '(vc-annotate-background "#d4d4d4")
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#437c7c")
-     (40 . "#336c6c")
-     (60 . "#205070")
-     (80 . "#2f4070")
-     (100 . "#1f3060")
-     (120 . "#0f2050")
-     (140 . "#a080a0")
-     (160 . "#806080")
-     (180 . "#704d70")
-     (200 . "#603a60")
-     (220 . "#502750")
-     (240 . "#401440")
-     (260 . "#6c1f1c")
-     (280 . "#935f5c")
-     (300 . "#834744")
-     (320 . "#732f2c")
-     (340 . "#6b400c")
-     (360 . "#23733c"))))
- '(vc-annotate-very-old-color "#23733c"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(rainbow-delimiters-depth-1-face ((t (:foreground "green"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "yellow"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "deep sky blue"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "moccasin"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "OliveDrab1"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "DarkOrchid1"))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "white")))))
 
 
 
