@@ -7,7 +7,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 
 
-* Basic configuration of build-in features
+* Configuration of basic build-in features
 
 ** Setting up built-in variables
    #+BEGIN_SRC emacs-lisp
@@ -70,7 +70,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 ** Configuration of documentation
    Emacs don't know this variable?!?!
    #+BEGIN_SRC emacs-lisp
-     ;; (setq apropos-sort-by-score t)
+     (setq apropos-sort-by-score t)
    #+END_SRC
 
 ** Save customize settings to separate file, not to [[file:init.el][init.el]] file.
@@ -91,6 +91,23 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
      (add-hook 'LaTeX-mode-hook 'flyspell-mode)
      (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
+   #+END_SRC
+
+
+
+
+
+
+
+
+
+
+* Advanced build-up features
+
+** Keyboard's macros
+
+   #+BEGIN_SRC emacs-lisp
+     ;; Empyt, for some time
    #+END_SRC
 
 
@@ -219,7 +236,8 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        (add-hook 'org-mode-hook 'rainbow-delimiters-mode))
    #+END_SRC
 
-** `Swiper' -- how to describe it????
+** Swiper
+   -- how to describe it????
    #+BEGIN_SRC emacs-lisp
      (use-package swiper
        :ensure t
@@ -252,25 +270,31 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        )
    #+END_SRC
 
-** `Try' -- try package without installing it
+** Try
+   -- try package without installing it
    #+BEGIN_SRC emacs-lisp
      (use-package try
        :ensure t)
    #+END_SRC
 
-** `Undo-tree' -- how to describe it????
+** Undo-tree
+   -- how to describe it????
    #+BEGIN_SRC emacs-lisp
      (use-package undo-tree
        :ensure t
        :config (global-undo-tree-mode t))
    #+END_SRC
 
-** `Which-key' -- how to describe it????
+** Which-key
+   -- how to describe it????
    #+BEGIN_SRC emacs-lisp
      (use-package which-key
        :ensure t
        :config (which-key-mode))
    #+END_SRC
+
+
+
 
 
 
@@ -345,6 +369,10 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
       (use-package latex-pretty-symbols
 	:ensure t)
     #+END_SRC
+
+
+
+
 
 
 
