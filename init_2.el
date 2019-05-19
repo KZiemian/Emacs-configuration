@@ -22,4 +22,4 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
 (setq ibuffer-default-sorting-mode 'major-mode)  ; Sorts buffers
-;; in buffers list by major mode of buffer
+;; in buffers list by maj.r .ode..f buffer

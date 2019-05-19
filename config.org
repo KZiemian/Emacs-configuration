@@ -42,10 +42,14 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
      (global-linum-mode t)   ; Shows number of line on the left
      ;; edge of window.
      (column-number-mode t)  ; Shows number of column where point is.
-     (winner-mode 1)         ; Allow to undo windows changes
-     (electric-pair-mode t)  ; Toggle automatic parenthis pairing
      (global-visual-line-mode 1)     ; Line of text are splited between
      ;; buffers' line
+
+     (global-hl-line-mode t) ; Highlight the line where point is.
+
+     (electric-pair-mode t)  ; Toggle automatic parenthis pairing
+
+     (winner-mode 1)         ; Allow to undo windows changes
 
      (setq outline-minor-mode-prefix "\C-c \C-o") ; Somethings don't work
    #+END_SRC
@@ -105,10 +109,16 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 * Advanced build-up features
 
 ** Keyboard's macros
+*** Keybord's macros for core things.
 
-   #+BEGIN_SRC emacs-lisp
-     ;; Empyt, for some time
-   #+END_SRC
+*** Keybord's macros for temporary things.
+    These macros will be removed, when things will be done.
+    #+BEGIN_SRC emacs-lisp
+      ;; Macro for inserting line with title.
+      (fset 'Title
+	    "Title: .\C-b\"")
+
+    #+END_SRC
 
 
 
