@@ -7,30 +7,31 @@ File for configuration that can be useful and also problematic, so not always I 
 * General packages
   Flycheck and flymake are powerful, but problematic so I temporally disable
   them.
-** Flycheck -- ????
-   # #+BEGIN_SRC emacs-lisp
-   #   (use-package flycheck
-   #     :ensure t
-   #     :init (global-flycheck-mode t))
-   # #+END_SRC
+** Flycheck
+   -- ????
+   #+BEGIN_SRC emacs-lisp
+     ;; (use-package flycheck
+     ;;   :ensure t
+     ;;   :init (global-flycheck-mode t))
+   #+END_SRC
 
-** `Flymake' -- I don't know what it does
-   # #+BEGIN_SRC emacs-lisp
-   #   (use-package flymake
-   #     :ensure t
-   #     :config
-   #     (defun flymake-get-tex-args (file-name)
-   # 	 (list "pdflatex"
-   # 	       (list "-file-line-error" "-draftmode"
-   # 		     "-interaction=nonstopmode"
-   # 		     file-name)))
-   #     (add-hook 'LaTeX-mode-hook 'flymake-mode)
-   #     )
-   # #+END_SRC
+** Fly make
+   -- I don't know what it does
+   #+BEGIN_SRC emacs-lisp
+     ;; (use-package flymake
+     ;;   :ensure t
+     ;;   :config
+     ;;   (defun flymake-get-tex-args (file-name)
+     ;;    (list "pdflatex"
+     ;;     	 (list "-file-line-error" "-draftmode"
+     ;;     	       "-interaction=nonstopmode"
+     ;;     	       file-name)))
+     ;;   (add-hook 'LaTeX-mode-hook 'flymake-mode))
+   #+END_SRC
 
 
 
-* Configuration of LaTeX in Emacs
+* Additional configuration of LaTeX in Emacs
 
 * Powerful configuration of IDEs inside Emacs and appropriate packages
   They so powerful that using them may be detrimental to you knowledge of
@@ -47,19 +48,20 @@ File for configuration that can be useful and also problematic, so not always I 
 ** Python
 *** Elpy -- auto-completion???
     #+BEGIN_SRC emacs-lisp
-      (use-package elpy
-	:ensure t
-	:defer t
-	:init (advice-add 'python-mode :before 'elpy-enable))
+      ;; (use-package elpy
+      ;;   :ensure t
+      ;;   :defer t
+      ;;   :init (advice-add 'python-mode :before 'elpy-enable))
     #+END_SRC
 
-*** Jedi -- auto-completion???
+*** Jedi
+    -- auto-completion???
     #+BEGIN_SRC emacs-lisp
-     (use-package jedi
-       :ensure t
-       :init
-       (add-hook 'python-mode-hook 'jedi:setup)
-       (add-hook 'python-mode-hook 'jedi:ac-setup)
-       :config
-       (setq jedi:complet-on-dot t))
+      ;; (use-package jedi
+      ;;   :ensure t
+      ;;   :init
+      ;;   (add-hook 'python-mode-hook 'jedi:setup)
+      ;;   (add-hook 'python-mode-hook 'jedi:ac-setup)
+      ;;   :config
+      ;;   (setq jedi:complet-on-dot t))
     #+END_SRC

@@ -110,6 +110,9 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 ** Keyboard's macros
 *** Keybord's macros for core things.
+    #+BEGIN+SRC emacs-lisp
+
+    #+END_SRC
 
 *** Keybord's macros for temporary things.
     These macros will be removed, when things will be done.
@@ -118,6 +121,14 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
       (fset 'Title
 	    "Title: .\C-b\"")
 
+      (fset 'Strange-text
+	 "Strange text: .\C-b\"")
+
+      (fset 'Tenth-paragraphs
+	 " paragraph.\C-a")
+
+      (fset 'th-paragraph
+	 "th paragraph.\C-a")
     #+END_SRC
 
 
@@ -229,10 +240,10 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    Package to putting into buffer psudolatin (?) text convenient in
    testing of formatting.
    #+BEGIN_SRC emacs-lisp
-     (use-package lorem-ipsum
-       :ensure t
-       ;; :config (lorem-ipsum-use-default-bindings)
-       )
+     ;; (use-package lorem-ipsum
+     ;;   :ensure t
+     ;;   :config (lorem-ipsum-use-default-bindings)
+     ;;   )
    #+END_SRC
 
 ** Rainbow-delimiters
@@ -312,7 +323,11 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 
 
-** AUCTeX ; Trzeba go instalować przez manger paciektów
+
+* Additional configuration of LaTeX in Emacs
+
+** AUCTeX
+   ; Trzeba go instalować przez manger paciektów
    #+BEGIN_SRC emacs-lisp
      ;; (use-package auctex
      ;;   :ensure t)
@@ -340,7 +355,10 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    ,,Folding and unfolding parts of the text might be confusing, though,
    but there’s another way to navigate through a big TeX file, and you can
    use Reftex mode for it. Reftex is a mode that helps with managing
-   references (full documentation), but it can also be used to create a table of contents for a TeX file and to navigate using it. Here is my configuration for Reftex from my .emacs file:'' https://piotr.is/2010/emacs-as-the-ultimate-latex-editor/
+   references (full documentation), but it can also be used to create
+   a table of contents for a TeX file and to navigate using it. Here is my
+   configuration for Reftex from my .emacs file:''
+   https://piotr.is/2010/emacs-as-the-ultimate-latex-editor/
    #+BEGIN_SRC emacs-lisp
      (autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
      (autoload 'turn-on-reftex "reftex" "RefTeX Minor Mode" nil)
@@ -374,7 +392,8 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    #+END_SRC
 
 ** Packages for LaTeX
-*** `LaTeX-pretty-symbols' -- display unicode in place of LaTeX commands
+*** LaTeX-pretty-symbols
+    -- display unicode in place of LaTeX commands
     #+BEGIN_SRC emacs-lisp
       (use-package latex-pretty-symbols
 	:ensure t)
@@ -406,13 +425,15 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 * Packages for specialized purpose
 
-** Htmlize -- font locking (syntax highlighting) in html files.
+** Htmlize
+   -- font locking (syntax highlighting) in html files.
    #+BEGIN_SRC emacs-lisp
      ;; (use-package htmlize
      ;;   :ensure t)
    #+END_SRC
 
-** Ox-reveal -- to have org-reveal
+** Ox-reveal
+   -- to have org-reveal
    #+BEGIN_SRC emacs-lisp
      ;; (use-package ox-reveal
      ;;   :ensure t)
