@@ -114,7 +114,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
     #+END_SRC
 
-*** Keybord's macros for temporary things.
+*** COMMENT Keybord's macros for temporary things.
     These macros will be removed, when things will be done.
     #+BEGIN_SRC emacs-lisp
       ;; Macro for inserting line with title.
@@ -122,22 +122,22 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 	    "Title: .\C-b\"")
 
       (fset 'Strange-text
-	 "Strange text: .\C-b\"")
+	    "Strange text: .\C-b\"")
 
       (fset 'Tenth-paragraphs
-	 " paragraph.\C-a")
+	    " paragraph.\C-a")
 
       (fset 'th-paragraph
 	    "th paragraph.\C-a")
 
       (fset 'Title
-	 "Title: .\C-b\"")
+	    "Title: .\C-b\"")
 
       (fset 'Titles
-	 "Titles: \"\C-f.\C-b\C-b\C-b, \C-b\C-b\"")
+	    "Titles: \"\C-f.\C-b\C-b\C-b, \C-b\C-b\"")
 
       (fset 'HereIs
-	 "Here is \"\C-f, should be \"\C-f.\C-a\346\346\C-f\C-f")
+	    "Here is \"\C-f, should be \"\C-f.\C-a\346\346\C-f\C-f")
     #+END_SRC
 
 
