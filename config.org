@@ -128,7 +128,16 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 	 " paragraph.\C-a")
 
       (fset 'th-paragraph
-	 "th paragraph.\C-a")
+	    "th paragraph.\C-a")
+
+      (fset 'Title
+	 "Title: .\C-b\"")
+
+      (fset 'Titles
+	 "Titles: \"\C-f.\C-b\C-b\C-b, \C-b\C-b\"")
+
+      (fset 'HereIs
+	 "Here is \"\C-f, should be \"\C-f.\C-a\346\346\C-f\C-f")
     #+END_SRC
 
 
