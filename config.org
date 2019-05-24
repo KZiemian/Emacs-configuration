@@ -110,11 +110,13 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 ** Keyboard's macros
 *** Keybord's macros for core things.
-    #+BEGIN+SRC emacs-lisp
-
+    Make better title
+    #+BEGIN_SRC emacs-lisp
+      (fset 'error-line
+	 [tab ?& ?  ?& ?  ?& ?  ?& ?  ?\\ ?\\ ?\M-m])
     #+END_SRC
 
-*** COMMENT Keybord's macros for temporary things.
+*** Keybord's macros for temporary things.
     These macros will be removed, when things will be done.
     #+BEGIN_SRC emacs-lisp
       ;; Macro for inserting line with title.
