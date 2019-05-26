@@ -8,16 +8,18 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(avy-case-fold-search t)
  '(avy-style (quote pre))
  '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
-    ("04232a0bfc50eac64c12471607090ecac9d7fd2d79e388f8543d1c5439ed81f5" default)))
+    ("7eded71a68f518d9e4d4580b477a3fb03bf2d0ecc1234ff361a7fdc1591b1c9d" "04232a0bfc50eac64c12471607090ecac9d7fd2d79e388f8543d1c5439ed81f5" default)))
  '(load-prefer-newer t)
  '(package-selected-packages
    (quote
-    (yasnippet-snippets elpy jedi flycheck auctex htmlize rust-mode which-key counsel color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon latex-pretty-symbols undo-tree try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
+    (nimbus-theme yasnippet-snippets elpy jedi flycheck auctex htmlize rust-mode which-key counsel color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon latex-pretty-symbols undo-tree try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
  '(use-package-verbose t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
