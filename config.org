@@ -63,12 +63,14 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 ** Setting up backups management
    #+BEGIN_SRC emacs-lisp
-     (setq backup-directory-alist '(("." . "~/.emacs.d/backups"))
+     (setq backup-directory-alist
+	   '(("." . (expand-file-name "backups" user-emacs-directory)))
 	   delete-old-versions 1
 	   version-control t
 	   vc-make-backup-files t
 	   auto-save-file-name-transforms
-	   '((".*" "~/.emacs.d/auto-save-list" t)))
+	   '((".*" (expand-file-name "auto-save-list" user-emacs-directory )
+	      t)))
    #+END_SRC
 
 ** Configuration of documentation
@@ -81,6 +83,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    #+BEGIN_SRC emacs-lisp
      (setq custom-file
 	   (expand-file-name "customize.el" user-emacs-directory))
+
      (load custom-file)
    #+END_SRC
 
@@ -160,6 +163,13 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    #+END_SRC
 
 
+* Additional functions written in elisp
+  Loading additional functions that don't depend on external packages.
+  #+BEGIN_SRC emacs-lisp
+    (load (expand-file-name "elisp/additional-functions.el"
+			    user-emacs-directory))
+  #+END_SRC
+
 * General packages ????
   These packages are used by wild area of buffers.
 
@@ -231,6 +241,14 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        :ensure t)
    #+END_SRC
 
+** Expand-region
+   #+BEGIN_SRC emacs-lisp
+     (use-package expand-region
+       :ensure t
+       :config
+       (global-set-key (kbd "C-=") 'er/expand-region))
+   #+END_SRC
+
 ** Hungry-delete
    C-d now remove all whitespace from point to the first non whitespace
    character. At least I understand it like that.
@@ -239,6 +257,13 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        :ensure t
        :config (global-hungry-delete-mode))
    #+END_SRC
+
+** Iedit
+   #+BEGIN_SRC emacs-lisp
+     (use-package iedit
+       :ensure t)
+   #+END_SRC
+
 ** Ivy
    ?!?!
    #+BEGIN_SRC emacs-lisp
@@ -261,12 +286,25 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
      ;;   )
    #+END_SRC
 
+** Multiple-cursors
+   Million more things that I don't know.
+   #+BEGIN_SRC emacs-lisp
+     (use-package multiple-cursors
+       :ensure t
+       :config
+       (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+       (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+       (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+       (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+   #+END_SRC
+
 ** Nimbus theme
    To not forget this very promising theme
    #+BEGIN_SRC emacs-lisp
      (use-package nimbus-theme
        :ensure t)
    #+END_SRC
+
 ** Rainbow-delimiters
    #+BEGIN_SRC emacs-lisp
      (use-package rainbow-delimiters

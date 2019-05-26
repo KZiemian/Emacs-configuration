@@ -19,7 +19,7 @@
  '(load-prefer-newer t)
  '(package-selected-packages
    (quote
-    (hungry-delete nimbus-theme yasnippet-snippets elpy jedi flycheck auctex htmlize rust-mode which-key counsel color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon latex-pretty-symbols undo-tree try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
+    (iedit multiple-cursors expand-region aggresive-indent hungry-delete nimbus-theme yasnippet-snippets elpy jedi flycheck auctex htmlize rust-mode which-key counsel color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon latex-pretty-symbols undo-tree try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
  '(use-package-verbose t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

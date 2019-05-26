@@ -18,8 +18,7 @@
 (load "~/.emacs.d/elisp/personal-functions.el")
 
 
-
-
+(expand-file-name "backups" user-emacs-directory)
 
 
 ;; ###########################
@@ -50,12 +49,7 @@
 	recentf-max-menu-items 500))
 
 
-(use-package multiple-cursors
-  :bind
-  (("C-S-c C-S-c" . mc/edit-lines)
-   ("C->" . mc/mark-next-like-this)
-   ("C-<" . mc/mark-previous-like-this)
-   ("C-c C-<" . mc/mark-all-like-this)))
+
 
 
 

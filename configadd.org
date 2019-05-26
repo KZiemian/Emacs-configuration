@@ -49,6 +49,13 @@ File for configuration that can be useful and also problematic, so not always I 
   language.
 
 ** For many languages
+*** Aggressive-indent
+    #+BEGIN_SRC emacs-lisp
+      (use-package aggressive-indent
+	:ensure t
+	:config (global-aggressive-indent-mode 1))
+    #+END_SRC
+
 *** Yasnippet
     You can past a snippet of code
     Install also *yasnippet-snippets* package.
@@ -58,24 +65,24 @@ File for configuration that can be useful and also problematic, so not always I 
 	:init (yas-global-mode 1))
     #+END_SRC
 
-***
+
 ** Python
 *** Elpy -- auto-completion???
     #+BEGIN_SRC emacs-lisp
-      ;; (use-package elpy
-      ;;   :ensure t
-      ;;   :defer t
-      ;;   :init (advice-add 'python-mode :before 'elpy-enable))
+      (use-package elpy
+	:ensure t
+	:defer t
+	:init (advice-add 'python-mode :before 'elpy-enable))
     #+END_SRC
 
 *** Jedi
     -- auto-completion???
     #+BEGIN_SRC emacs-lisp
-      ;; (use-package jedi
-      ;;   :ensure t
-      ;;   :init
-      ;;   (add-hook 'python-mode-hook 'jedi:setup)
-      ;;   (add-hook 'python-mode-hook 'jedi:ac-setup)
-      ;;   :config
-      ;;   (setq jedi:complet-on-dot t))
+      (use-package jedi
+	:ensure t
+	:init
+	(add-hook 'python-mode-hook 'jedi:setup)
+	(add-hook 'python-mode-hook 'jedi:ac-setup)
+	:config
+	(setq jedi:complet-on-dot t))
     #+END_SRC

@@ -95,11 +95,11 @@
 ;; #################
 ;; Cofiguration of ido (Interactive DO things)
 
-;; Maybe this is still needed. But I don't know.
-(setq ido-file-extensions-order '(".tex" ".org" ".txt" ".el"
-				  ".rs" ".lisp"))
-(setq ido-ignore-extensions t) 		; Ignore objects definde by
-;; `complete-ignored-extensions' variable
+;; ;; Maybe this is still needed. But I don't know.
+;; (setq ido-file-extensions-order '(".tex" ".org" ".txt" ".el"
+;; 				  ".rs" ".lisp"))
+;; (setq ido-ignore-extensions t) 		; Ignore objects definde by
+;; ;; `complete-ignored-extensions' variable
 
 
 
@@ -107,7 +107,7 @@
 
 ;; #################
 ;; Configuration of buffers list
-(global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
-(setq ibuffer-default-sorting-mode 'major-mode)  ; Sorts buffers
-;; in buffers list by major mode of buffer
+;; (setq ibuffer-default-sorting-mode 'major-mode)  ; Sorts buffers
+;; ;; in buffers list by major mode of buffer
