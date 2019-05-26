@@ -143,9 +143,6 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
     #+END_SRC
 
 
-
-
-
 * Org-mode
   Configuration of giant **org-mode**.
   #+BEGIN_SRC emacs-lisp
@@ -161,9 +158,6 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        :ensure t
        :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
    #+END_SRC
-
-
-
 
 
 * General packages ????
@@ -216,7 +210,9 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    #+BEGIN_SRC emacs-lisp
      (use-package beacon
        :ensure t
-       :config (beacon-mode t))
+       :config (beacon-mode t)
+       (setq beacon-color "#666600")
+       )
    #+END_SRC
 
 ** Color-theme-modern
@@ -235,6 +231,14 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        :ensure t)
    #+END_SRC
 
+** Hungry-delete
+   C-d now remove all whitespace from point to the first non whitespace
+   character. At least I understand it like that.
+   #+BEGIN_SRC emacs-lisp
+     (use-package hungry-delete
+       :ensure t
+       :config (global-hungry-delete-mode))
+   #+END_SRC
 ** Ivy
    ?!?!
    #+BEGIN_SRC emacs-lisp
@@ -257,6 +261,12 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
      ;;   )
    #+END_SRC
 
+** Nimbus theme
+   To not forget this very promising theme
+   #+BEGIN_SRC emacs-lisp
+     (use-package nimbus-theme
+       :ensure t)
+   #+END_SRC
 ** Rainbow-delimiters
    #+BEGIN_SRC emacs-lisp
      (use-package rainbow-delimiters
@@ -326,15 +336,6 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    #+END_SRC
 
 
-
-
-
-
-
-
-
-
-
 * Additional configuration of LaTeX in Emacs
 
 ** AUCTeX
@@ -346,10 +347,10 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 ** General LaTeX settings
    #+BEGIN_SRC emacs-lisp
-       (setq TeX-auto-save t
-	     TeX-parse-self t
-	     TeX-save-query nil
-	     TeX-PDF-mode t)
+     (setq TeX-auto-save t
+	   TeX-parse-self t
+	   TeX-save-query nil
+	   TeX-PDF-mode t)
      ;; (setq-default TeX-master nil)  ; I don't know what this line do?!?!
    #+END_SRC
 
@@ -409,7 +410,6 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
       (use-package latex-pretty-symbols
 	:ensure t)
     #+END_SRC
-
 
 
 

@@ -32,19 +32,33 @@ File for configuration that can be useful and also problematic, so not always I 
 
 
 * Additional configuration of LaTeX in Emacs
+** Flymake
+   #+BEGIN_SRC emacs-lisp
+     ;; (use-package flymake
+     ;;   :ensure t
+     ;;   :config
+     ;;   (defun flymake-get-tex-args (file-name)
+     ;;     (list "pdflatex"
+     ;; 	  (list "-file-line-error" "-draftmode"
+     ;; 		"-interaction=nonstopmode" file-name)))
+     ;;   (add-hook 'LaTeX-mode-hook 'flymake-mode))
+   #+END_SRC
 
 * Powerful configuration of IDEs inside Emacs and appropriate packages
   They so powerful that using them may be detrimental to you knowledge of
   language.
 
 ** For many languages
-*** Yasnippet - you can past a snippet of code
+*** Yasnippet
+    You can past a snippet of code
+    Install also *yasnippet-snippets* package.
     #+BEGIN_SRC emacs-lisp
       (use-package yasnippet
 	:ensure t
 	:init (yas-global-mode 1))
     #+END_SRC
 
+***
 ** Python
 *** Elpy -- auto-completion???
     #+BEGIN_SRC emacs-lisp
