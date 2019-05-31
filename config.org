@@ -23,10 +23,6 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 ** Releasing built-in keychords (?????)
    #+BEGIN_SRC emacs-lisp
-     ;; (global-set-key (kbd "<f3>") nil)
-     ;; ;; Release `kmacro-start-macro-or-insert-counter'
-     ;; (global-set-key (kbd "<f4>") nil)
-     ;; ;; Release `kmacro-end-or-call-macro'
    #+END_SRC
 
 ** Global keychords
@@ -127,27 +123,67 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 *** Keybord's macros for temporary things.
     These macros will be removed, when things will be done.
     #+BEGIN_SRC emacs-lisp
+      ;; (fmakunbound 'name-of-macro)
+      ;; (fmakunbound 'HereIs)
+
+      ;; For correcting word of dr Rao
+
+      (fset 'HereIs-1
+	    "Here is \"\C-f, should be \"\C-f.\342\342\342\C-f\C-f\C-f\C-f")
+
+      (put 'HereIs-1 'kmacro t)
+
+      (fset 'HereIs-many
+	    "Here is \"\C-f, should be \"\C-f. ")
+
+      (put 'HereIs-many 'kmacro t)
+
       ;; Macro for inserting line with title.
       (fset 'Title
 	    "Title: .\C-b\"")
 
-      (fset 'Strange-text
-	    "Strange text: .\C-b\"")
-
-      (fset 'Tenth-paragraphs
-	    " paragraph.\C-a")
-
-      (fset 'th-paragraph
-	    "th paragraph.\C-a")
-
-      (fset 'Title
-	    "Title: .\C-b\"")
+      (put 'Title 'kmacro t)
 
       (fset 'Titles
 	    "Titles: \"\C-f.\C-b\C-b\C-b, \C-b\C-b\"")
 
-      (fset 'HereIs
-	    "Here is \"\C-f, should be \"\C-f.\C-a\346\346\C-f\C-f")
+      (put 'Titles 'kmacro t)
+
+      (fset 'Strange-text
+	    "Strange text: .\C-b\"")
+
+      (put 'Strange-text 'kmacro t)
+
+      (fset 'Strange-text-many
+	    [?S ?t ?r ?a ?n ?g ?e ?- ?t ?e ?x ?t ?: ?  ?\" ?\C-e ?. return])
+
+      (put 'Strange-text-many 'kmacro t)
+
+      (fset 'Tenth-paragraphs
+	    " paragraph.\C-a")
+
+      (put 'Tenth-paragraphs 'kmacro t)
+
+      (fset 'th-paragraph
+	    "th paragraph.\C-a")
+
+      (put 'th-paragraph 'kmacro t)
+    #+END_SRC
+
+*** Keyboards macros for marking place in the text
+    #+BEGIN_SRC emacs-lisp
+      ;; ###########################
+      ;; Emacs Lisp
+      ;; ###########################
+
+      (fset 'elisp-30
+	    [?\; ?\; ?  ?\C-2 ?\C-7 ?# ?\C-n])
+
+      (fset 'elisp-13
+	    [?\; ?\; ?  ?\C-1 ?\C-0 ?# ?\C-n])
+
+      (fset 'elisp-section
+      [?\; ?\; ?  ?\C-2 ?7 ?# ?\C-n ?\; ?\; ?  ?\C-n ?\; ?\; ?  ?\C-n ?\; ?\; ?  ?\C-2 ?7 ?# ?\C-p ?\C-p])
     #+END_SRC
 
 

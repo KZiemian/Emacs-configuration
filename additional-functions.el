@@ -1,6 +1,10 @@
+;; ###########################
 ;; Some additional function for Emacs, that don't use external packages.
+;; ###########################
 
 
+;; ##########
+;; Function from
 ;; http://endlessparentheses.com/emacs-narrow-or-widen-dwim.html
 
 (defun narrow-or-widen-dwim (p)
