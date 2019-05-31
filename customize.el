@@ -12,6 +12,8 @@
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(avy-case-fold-search t)
  '(avy-style (quote pre))
+ '(beacon-color "saddle brown")
+ '(beacon-mode t)
  '(custom-enabled-themes (quote (nimbus)))
  '(custom-safe-themes
    (quote

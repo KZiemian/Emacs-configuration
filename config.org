@@ -226,9 +226,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    #+BEGIN_SRC emacs-lisp
      (use-package beacon
        :ensure t
-       :config (beacon-mode t)
-       (setq beacon-color "#666600")
-       )
+       :config (beacon-mode t))
    #+END_SRC
 
 ** Color-theme-modern
