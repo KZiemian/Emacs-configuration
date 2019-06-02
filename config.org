@@ -13,6 +13,8 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    #+BEGIN_SRC emacs-lisp
      (setq next-line-add-newlines t)
      (setq sentence-end-double-space nil)
+
+     (setq save-interprogram-paste-before-kill t)
    #+END_SRC
 
 ** Setting up predictors
@@ -48,6 +50,11 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
      (winner-mode 1)         ; Allow to undo windows changes
 
      (setq outline-minor-mode-prefix "\C-c \C-o") ; Somethings don't work
+
+
+     (global-auto-revert-mode 1)
+     (setq auto-revert-verbose nil)		; Unknown variable?
+     (global-set-key (kbd "<f5>") 'revet-buffer)
    #+END_SRC
 
 ** Global hooks
@@ -85,7 +92,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
      (setq custom-file
 	   (expand-file-name "customize.el" user-emacs-directory))
 
-     (load custom-file)
+     (load custom-file t)
    #+END_SRC
 
 ** Setting up auto-correction
@@ -208,11 +215,11 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
   Loading additional functions that don't depend on external packages.
   #+BEGIN_SRC emacs-lisp
     (load (expand-file-name "elisp/additional-functions.el"
-			    user-emacs-directory))
+			    user-emacs-directory) t)
   #+END_SRC
 
 
-* General packages ????
+* General packages
   These packages are used by wild area of buffers.
 
 ** Ace-window
@@ -278,7 +285,11 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    Need for Swiper packages
    #+BEGIN_SRC emacs-lisp
      (use-package counsel
-       :ensure t)
+       :ensure t
+       :bind
+       (("M-y" . counsel-yank-pop)
+	:map ivy-minibuffer-map
+	("M-y" . ivy-next-line)))
    #+END_SRC
 
 ** Expand-region
@@ -339,7 +350,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
    #+END_SRC
 
 ** Nimbus theme
-   To not forget this very promising theme
+   To not forget this very promising theme.
    #+BEGIN_SRC emacs-lisp
      (use-package nimbus-theme
        :ensure t)
