@@ -73,18 +73,20 @@
 
 ;; #################
 ;; Load the `config.org' file
-(org-babel-load-file (concat user-emacs-directory "config.org"))
+(org-babel-load-file (expand-file-name "config.org" user-emacs-directory))
 
 
 ;; #####
 ;; Load `configadd.org' file
+;; Additiona configuration for Emacs
+(org-babel-load-file (expand-file-name "configadd.org" user-emacs-directory))
+
+;; #####
+;; Load `configovpowered.org' file
 ;; With configuraiotn of problematic and "too useful" Emacs
 ;; setting and packages.
-(org-babel-load-file (concat user-emacs-directory "configadd.org"))
-
-
-
-
+(org-babel-load-file (expand-file-name "configovpowered.org"
+				       user-emacs-directory))
 
 
 

@@ -424,8 +424,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        :config (which-key-mode))
    #+END_SRC
 
-
-* Additional configuration of LaTeX in Emacs
+* Configuration of LaTeX in Emacs
 
 ** AUCTeX
    ; Trzeba go instalować przez manger paciektów
@@ -510,34 +509,18 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 * Configuration of IDEs inside Emacs and appropriate packages
 
+** For many languages
+*** Aggressive-indent
+    #+BEGIN_SRC emacs-lisp
+      (use-package aggressive-indent
+	:ensure t
+	:config (global-aggressive-indent-mode 1))
+    #+END_SRC
+
 ** `Rust-mode' -- Emacs mode for Rust programming language
    #+BEGIN_SRC emacs-lisp
      (use-package rust-mode
        :ensure t
        ;; :config (setq rust-format-on-save t)
        )
-   #+END_SRC
-
-
-
-
-
-
-* Packages for specialized purpose
-
-** Htmlize
-   -- font locking (syntax highlighting) in html files.
-   #+BEGIN_SRC emacs-lisp
-     ;; (use-package htmlize
-     ;;   :ensure t)
-   #+END_SRC
-
-** Ox-reveal
-   -- to have org-reveal
-   #+BEGIN_SRC emacs-lisp
-     ;; (use-package ox-reveal
-     ;;   :ensure t)
-
-     ;; (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
-     ;; (setq org-reveal-mathjax t)
    #+END_SRC

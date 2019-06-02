@@ -1,88 +1,41 @@
 #+TITLE: Additional configuration to Emacs
 
 
-File for configuration that can be useful and also problematic, so not always I want it turned on. Like things that make writing of code to easy and fast, make thinking of nuts and bolts unnecessary, what is very bad when you learn new language.
+Not core, but very use full configuration for Emacs.
 
 
-* General packages
-  Flycheck and flymake are powerful, but problematic so I temporally disable
-  them.
-** Flycheck
-   -- ????
+* Packages for specialized purpose
+
+
+** HTML
+*** Htmlize
+   -- font locking (syntax highlighting) in html files.
    #+BEGIN_SRC emacs-lisp
-     ;; (use-package flycheck
-     ;;   :ensure t
-     ;;   :init (global-flycheck-mode t))
+     ;; (use-package htmlize
+     ;;   :ensure t)
    #+END_SRC
 
-** Fly make
-   -- I don't know what it does
-   #+BEGIN_SRC emacs-lisp
-     ;; (use-package flymake
-     ;;   :ensure t
-     ;;   :config
-     ;;   (defun flymake-get-tex-args (file-name)
-     ;;    (list "pdflatex"
-     ;;     	 (list "-file-line-error" "-draftmode"
-     ;;     	       "-interaction=nonstopmode"
-     ;;     	       file-name)))
-     ;;   (add-hook 'LaTeX-mode-hook 'flymake-mode))
-   #+END_SRC
-
-
-
-* Additional configuration of LaTeX in Emacs
-** Flymake
-   #+BEGIN_SRC emacs-lisp
-     ;; (use-package flymake
-     ;;   :ensure t
-     ;;   :config
-     ;;   (defun flymake-get-tex-args (file-name)
-     ;;     (list "pdflatex"
-     ;; 	  (list "-file-line-error" "-draftmode"
-     ;; 		"-interaction=nonstopmode" file-name)))
-     ;;   (add-hook 'LaTeX-mode-hook 'flymake-mode))
-   #+END_SRC
-
-* Powerful configuration of IDEs inside Emacs and appropriate packages
-  They so powerful that using them may be detrimental to you knowledge of
-  language.
-
-** For many languages
-*** Aggressive-indent
+*** Web-mode
     #+BEGIN_SRC emacs-lisp
-      (use-package aggressive-indent
+      (use-package web-mode
 	:ensure t
-	:config (global-aggressive-indent-mode 1))
-    #+END_SRC
-
-*** Yasnippet
-    You can past a snippet of code
-    Install also *yasnippet-snippets* package.
-    #+BEGIN_SRC emacs-lisp
-      (use-package yasnippet
-	:ensure t
-	:init (yas-global-mode 1))
-    #+END_SRC
-
-
-** Python
-*** Elpy -- auto-completion???
-    #+BEGIN_SRC emacs-lisp
-      (use-package elpy
-	:ensure t
-	:defer t
-	:init (advice-add 'python-mode :before 'elpy-enable))
-    #+END_SRC
-
-*** Jedi
-    -- auto-completion???
-    #+BEGIN_SRC emacs-lisp
-      (use-package jedi
-	:ensure t
-	:init
-	(add-hook 'python-mode-hook 'jedi:setup)
-	(add-hook 'python-mode-hook 'jedi:ac-setup)
 	:config
-	(setq jedi:complet-on-dot t))
+	(add-to-list 'auto-mode-alist '("\\.hmtl?\\'" . web-mode))
+	(setq web-mode-engines-alist)
+	'(("django" . "\\.html\\'"))
+	(setq web-mode-engines-alist
+	      '(("css" . (ac-source-css-property))
+		("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+	(setq web-mode-enable-auto-closing t)
+	(setq web-mode-enable-auto-quotin t))
     #+END_SRC
+
+** Ox-reveal ????
+   -- to have org-reveal ???
+   #+BEGIN_SRC emacs-lisp
+     ;; (use-package ox-reveal
+     ;;   :ensure t)
+
+     ;; (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
+     ;; (setq org-reveal-mathjax t)
+   #+END_SRC
