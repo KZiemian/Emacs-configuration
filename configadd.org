@@ -6,7 +6,6 @@ Not core, but very use full configuration for Emacs.
 
 * Packages for specialized purpose
 
-
 ** HTML
 *** Htmlize
    -- font locking (syntax highlighting) in html files.
@@ -17,17 +16,19 @@ Not core, but very use full configuration for Emacs.
 
 *** Web-mode
     #+BEGIN_SRC emacs-lisp
-      (use-package web-mode
-	:ensure t
-	:config
-	(add-to-list 'auto-mode-alist '("\\.hmtl?\\'" . web-mode))
-	(setq web-mode-engines-alist)
-	'(("django" . "\\.html\\'"))
-	(setq web-mode-engines-alist
-	      '(("css" . (ac-source-css-property))
-		("html" . (ac-source-words-in-buffer ac-source-abbrev))))
-	(setq web-mode-enable-auto-closing t)
-	(setq web-mode-enable-auto-quotin t))
+      ;; (use-package web-mode
+      ;;   :ensure t
+      ;;   :config
+      ;;   (add-to-list 'auto-mode-alist '("\\.hmtl?\\'" . web-mode))
+      ;;   (setq web-mode-engines-alist
+      ;; 	'(("django" . "\\.html\\'")))
+      ;;   (setq web-mode-engines-alist
+      ;; 	'(("css" . (ac-source-css-property))
+      ;; 	  ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+      ;;   (setq web-mode-enable-auto-closing t)
+      ;;   (setq web-mode-enable-auto-quotin t)
+      ;;   (setq web-mode-enable-current-element-highlight t)
+      ;;   (setq web-mode-enable-current-column-highlight t))
     #+END_SRC
 
 ** Ox-reveal ????

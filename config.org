@@ -424,6 +424,7 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
        :config (which-key-mode))
    #+END_SRC
 
+
 * Configuration of LaTeX in Emacs
 
 ** AUCTeX
@@ -515,6 +516,14 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
       (use-package aggressive-indent
 	:ensure t
 	:config (global-aggressive-indent-mode 1))
+    #+END_SRC
+
+** `Python'
+*** Setting Python interpreter to Python3
+    #+BEGIN_SRC emacs-lisp
+      (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
+      (setq python-shell-interpreter "ipython3"
+	    python-shell-interpreter-args "-i")
     #+END_SRC
 
 ** `Rust-mode' -- Emacs mode for Rust programming language

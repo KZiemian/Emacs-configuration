@@ -6,7 +6,7 @@ File for configuration that can be useful and also problematic, so not always I 
 
 
 * General packages
-  Flycheck and flymake are powerful, but problematic so I temporally disable
+  Flycheck (and flymake) are powerful, but problematic so I temporally disable
   them.
 ** Flycheck
    -- ????
