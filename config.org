@@ -121,94 +121,144 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
 
 ** Keyboard's macros
 *** Keybord's macros for core things.
-    Make better title
-    #+BEGIN_SRC emacs-lisp
-      (fset 'error-line
-	 [tab ?& ?  ?& ?  ?& ?  ?& ?  ?\\ ?\\ ?\M-m])
-    #+END_SRC
+Make better title
+#+BEGIN_SRC emacs-lisp
+  (fset 'error-line
+     [tab ?& ?  ?& ?  ?& ?  ?& ?  ?\\ ?\\ ?\M-m])
+#+END_SRC
 
 *** Keybord's macros for temporary things.
-    These macros will be removed, when things will be done.
-    #+BEGIN_SRC emacs-lisp
-      ;; (fmakunbound 'name-of-macro)
-      ;; (fmakunbound 'HereIs)
+These macros will be removed, when things will be done.
+#+BEGIN_SRC emacs-lisp
+  ;; (fmakunbound 'name-of-macro)
+  ;; (fmakunbound 'HereIs)
 
-      ;; For correcting word of dr Rao
+  ;; For correcting word of dr Rao
 
-      (fset 'HereIs-1
-	    "Here is \"\C-f, should be \"\C-f.\342\342\342\C-f\C-f\C-f\C-f")
+  (fset 'HereIs-1
+        "Here is \"\C-f, should be \"\C-f.\342\342\342\C-f\C-f\C-f\C-f")
 
-      (put 'HereIs-1 'kmacro t)
+  (put 'HereIs-1 'kmacro t)
 
-      (fset 'HereIs-many
-	    "Here is \"\C-f, should be \"\C-f. ")
+  (fset 'HereIs-many
+        "Here is \"\C-f, should be \"\C-f. ")
 
-      (put 'HereIs-many 'kmacro t)
+  (put 'HereIs-many 'kmacro t)
 
-      ;; Macro for inserting line with title.
-      (fset 'Title
-	    "Title: .\C-b\"")
+  ;; Macro for inserting line with title.
+  (fset 'Title
+        "Title: .\C-b\"")
 
-      (put 'Title 'kmacro t)
+  (put 'Title 'kmacro t)
 
-      (fset 'Titles
-	    "Titles: \"\C-f.\C-b\C-b\C-b, \C-b\C-b\"")
+  (fset 'Titles
+        "Titles: \"\C-f.\C-b\C-b\C-b, \C-b\C-b\"")
 
-      (put 'Titles 'kmacro t)
+  (put 'Titles 'kmacro t)
 
-      (fset 'Strange-text
-	    "Strange text: .\C-b\"")
+  (fset 'Strange-text
+        "Strange text: .\C-b\"")
 
-      (put 'Strange-text 'kmacro t)
+  (put 'Strange-text 'kmacro t)
 
-      (fset 'Strange-text-many
-	    [?S ?t ?r ?a ?n ?g ?e ?- ?t ?e ?x ?t ?: ?  ?\" ?\C-e ?. return])
+  (fset 'Strange-text-many
+        [?S ?t ?r ?a ?n ?g ?e ?- ?t ?e ?x ?t ?: ?  ?\" ?\C-e ?. return])
 
-      (put 'Strange-text-many 'kmacro t)
+  (put 'Strange-text-many 'kmacro t)
 
-      (fset 'Tenth-paragraphs
-	    " paragraph.\C-a")
+  (fset 'Tenth-paragraphs
+        " paragraph.\C-a")
 
-      (put 'Tenth-paragraphs 'kmacro t)
+  (put 'Tenth-paragraphs 'kmacro t)
 
-      (fset 'th-paragraph
-	    "th paragraph.\C-a")
+  (fset 'th-paragraph
+        "th paragraph.\C-a")
 
-      (put 'th-paragraph 'kmacro t)
-    #+END_SRC
+  (put 'th-paragraph 'kmacro t)
+
+#+END_SRC
 
 *** Keyboards macros for marking place in the text
-    #+BEGIN_SRC emacs-lisp
-      ;; ###########################
-      ;; Emacs Lisp
-      ;; ###########################
+#+BEGIN_SRC emacs-lisp
+  ;; ###########################
+  ;; Emacs Lisp
+  ;; ###########################
 
-      (fset 'elisp-30
-	    [?\; ?\; ?  ?\C-2 ?\C-7 ?# ?\C-n])
+  (fset 'elisp-30
+        [?\; ?\; ?  ?\C-2 ?\C-7 ?# ?\C-n])
 
-      (fset 'elisp-13
-	    [?\; ?\; ?  ?\C-1 ?\C-0 ?# ?\C-n])
+  (fset 'elisp-13
+        [?\; ?\; ?  ?\C-1 ?\C-0 ?# ?\C-n])
 
-      (fset 'elisp-section
-      [?\; ?\; ?  ?\C-2 ?7 ?# ?\C-n ?\; ?\; ?  ?\C-n ?\; ?\; ?  ?\C-n ?\; ?\; ?  ?\C-2 ?7 ?# ?\C-p ?\C-p])
-    #+END_SRC
+  (fset 'elisp-section
+        [?\; ?\; ?  ?\C-2 ?7 ?# ?\C-n ?\; ?\; ?  ?\C-n ?\; ?\; ?  ?\C-n ?\; ?\; ?  ?\C-2 ?7 ?# ?\C-p ?\C-p])
+
+
+
+  ;; ###########################
+  ;; Python
+  ;; ###########################
+
+
+  (fset 'python-30
+        [?\C-3 ?\C-0 ?# ?\C-n])
+
+  (fset 'python-section
+        [?\C-3 ?\C-0 ?# ?\C-n ?# ?  ?\C-n ?\C-3 ?\C-0 ?# ?\C-p])
+#+END_SRC
 
 
 * Org-mode
-  Configuration of giant **org-mode**.
-  #+BEGIN_SRC emacs-lisp
-    (use-package org
-      :ensure t
-      :pin org)
-  #+END_SRC
+Configuration of giant **org-mode**.
+#+BEGIN_SRC emacs-lisp
+  (use-package org
+    :ensure t
+    :pin org)
+
+
+  (custom-set-variables
+   ;; '(org-directory "~/????")
+   ;; '(org-default-notes-file (concat org-directory "/notes.org ????"))
+   '(org-export-html-postamble nil)
+   '(org-hide-leading-stars t)
+   '(org-startup-folded (quote overview))
+   '(org-startup-indented t))
+
+
+  (setq org-file-apps (append '(("\\.pdf\\" . "evince %s") org-file-apps)))
+
+
+  (global-set-key "\C-ca" 'org-agenda)
+
+
+
+  ;; (use-package org-ac
+  ;;   :ensure t
+  ;;   :init
+  ;;   (require 'org-ac)
+  ;;   (org-ac/config-default))
+
+
+  ;; (global-set-key (kbd "C-c c") 'org-capture)
+
+
+  ;; (setq org-agenda-files (list ))
+
+  ;; (setq org-agenda-files (list "~/Podstawy-I/org/Wazne.org"
+  ;; 			     "~/Podstawy-I/org/Szybko.org"
+  ;; 			     "~/Podstawy-I/org/Praca.org"
+  ;; 			     "~/Podstawy-I/org/Ksiazki.org"
+  ;; 			     "~/Podstawy-I/org/Kup.org"
+  ;; 			     "~/Podstawy-I/org/Przemysl.org"))
+#+END_SRC
 
 ** Org-bullets
-   Unicode bullets for **org-mode**
-   #+BEGIN_SRC emacs-lisp
-     (use-package org-bullets
-       :ensure t
-       :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-   #+END_SRC
+Unicode bullets for **org-mode**
+#+BEGIN_SRC emacs-lisp
+  (use-package org-bullets
+    :ensure t
+    :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+#+END_SRC
 
 
 * Additional functions written in elisp
@@ -223,16 +273,16 @@ Structure of this file is based on Daniel Mai Emacs configuration https://github
   These packages are used by wild area of buffers.
 
 ** Ace-window
-   Fast moving to numbered windows.
-   #+BEGIN_SRC emacs-lisp
-     (use-package ace-window
-       :ensure t
-       :config
-       (global-set-key [remap other-window] 'ace-window)
-       (custom-set-faces
-	'(aw-leading-char-face
-	  ((t (:inherit ace-jump-face-foreground :height 3.0))))))
-   #+END_SRC
+Fast moving to numbered windows.
+#+BEGIN_SRC emacs-lisp
+  (use-package ace-window
+    :ensure t
+    :config
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 3.0))))))
+#+END_SRC
 
 ** Achievements (;-)
    #+BEGIN_SRC emacs-lisp

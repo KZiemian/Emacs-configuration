@@ -14,13 +14,6 @@
 
 
 
-;; Pliki z moimi wlasnymi funkcjami i ustwieniami.
-(load "~/.emacs.d/elisp/personal-functions.el")
-
-
-(expand-file-name "backups" user-emacs-directory)
-
-
 ;; ###########################
 ;; Installing packeges
 
@@ -33,9 +26,6 @@
 ;; (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 ;; Inicjalizowanie paczek Emacsa
-
-(package-initialize)
-
 
 
 ;; Ustawienia wyszukiwania ostatnio edytowanych plikow.
@@ -206,8 +196,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs as Python IDE
-(setq python-shell-interpreter "python3")
-;; (setq python-python-command "/usr/bin/python3")
 (with-eval-after-load 'python
   (defun python-shell-completion-native-try ()
     "Return non-nil if can trigger native completion."
@@ -276,16 +264,6 @@
 (define-key global-map "\C-c l" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
-
-
-;; ##########
-(setq org-agenda-files (list "~/Podstawy-I/org/Wazne.org"
-			     "~/Podstawy-I/org/Szybko.org"
-			     "~/Podstawy-I/org/Praca.org"
-			     "~/Podstawy-I/org/Ksiazki.org"
-			     "~/Podstawy-I/org/Kup.org"
-			     "~/Podstawy-I/org/Przemysl.org"))
-
 
 
 ;; Ustawienie tematu Emacsa.

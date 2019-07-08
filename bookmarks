@@ -1,0 +1,95 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("TikZ-s01-03.tex"
+ (filename . "~/Basic-changing/LaTeX/TikZ/TikZ-s01-03.tex")
+ (front-context-string . "\n% % ###########")
+ (rear-context-string . "###########\n\n\n\n\n")
+ (position . 11824))
+("Org"
+ (filename . "~/.emacs.d/config.org")
+ (front-context-string . "\n  #+END_SRC\n\n**")
+ (rear-context-string . "      :pin org)\n")
+ (position . 5066))
+("Django"
+ (filename . "~/Programming/Python/Django/")
+ (front-context-string)
+ (rear-context-string . "96 lip  7 14:59 ")
+ (position . 214))
+("c-s01-34.c"
+ (filename . "~/Programming/C/c-s01-34.c")
+ (front-context-string)
+ (rear-context-string . "\nint main() {\n  ")
+ (position . 37))
+("Keyboard macros"
+ (filename . "~/.emacs.d/config.org")
+ (front-context-string . "\n      ;; ######")
+ (rear-context-string . "\n      ;; Python")
+ (position . 4884))
+("Facebook"
+ (filename . "~/Basic-changing/Do-napisania/Facebook.txt")
+ (front-context-string . "\n\n##############")
+ (rear-context-string . "##############\n\n")
+ (position . 3355))
+("Commands"
+ (filename . "~/Basic-changing/Wyniki/Article/Casimir-force-two-points.tex")
+ (front-context-string . "\n\n\\newcommand{\\T")
+ (rear-context-string . "thbb{R}^{ 3 }}\n\n")
+ (position . 3342))
+("Contour"
+ (filename . "~/Basic-changing/LaTeX/TikZ/TikZ-s01-04.tex")
+ (front-context-string . "\n  \\end{tikzpict")
+ (rear-context-string . "(xaxis) {$x$};\n\n")
+ (position . 8306))
+("Contur"
+ (filename . "~/Basic-changing/LaTeX/TikZ/TikZ-s01-04.tex")
+ (front-context-string . "\n  \\end{tikzpict")
+ (rear-context-string . "\n    \\end{scope}")
+ (position . 5547))
+("Removed parts"
+ (filename . "~/Basic-changing/Wyniki/Article/Removed_parts.tex")
+ (front-context-string . "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+ (rear-context-string . "\\end{equation}\n\n")
+ (position . 164435))
+("Python-3"
+ (filename . "~/Programming/Python-3/Python-3-s01-01.py")
+ (front-context-string . "\n###############")
+ (rear-context-string . "fkdcwOGBpGdHpXln")
+ (position . 185))
+("makefile"
+ (filename . "~/Programming/C/makefile")
+ (front-context-string . "\n\n\n\nmake:\n	$(CC)")
+ (rear-context-string . "UM=01\nFILENUM=10")
+ (position . 91))
+("C"
+ (filename . "~/Programming/C/")
+ (front-context-string . "10wyklad65.pdf\n ")
+ (rear-context-string . "12 kwi 25  2013 ")
+ (position . 213))
+("Amerio"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/DEUS-i-filozofia-błędy-i-uwagi/DEUS-błędy-i-uwagi.tex")
+ (front-context-string . "    % & & & & \\\\")
+ (rear-context-string . "\n    % 425?????\n")
+ (position . 32133))
+("Świat Chrystusa"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/DEUS-i-filozofia-błędy-i-uwagi/DEUS-błędy-i-uwagi.tex")
+ (front-context-string . "\n% \\StrWd{51}{1}")
+ (rear-context-string . " \\\\\n\\Jest\n\\Powin")
+ (position . 49781))
+("english"
+ (filename . "~/.emacs.d/config.org")
+ (front-context-string . "\n     ;; (setq i")
+ (rear-context-string . "onary \"english\")")
+ (position . 2783))
+("Polish"
+ (filename . "~/.emacs.d/config.org")
+ (front-context-string . "\n\n     (add-hook")
+ (rear-context-string . "ionary \"polish\")")
+ (position . 2825))
+("TikZ"
+ (filename . "~/Basic-changing/LaTeX/TikZ/TikZ-s01-04.tex")
+ (front-context-string . "\n\n\n\n% ----------")
+ (rear-context-string . "tions.markings}\n")
+ (position . 2915))
+)
