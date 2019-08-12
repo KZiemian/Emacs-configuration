@@ -97,8 +97,8 @@ Emacs don't know this variable?!?!
 ** Setting up auto-correction
 #+BEGIN_SRC emacs-lisp
   ;; (setq ispell-program-name "aspell")  ; By default is `aspell'
-  (setq ispell-dictionary "english")
-  ;; (setq ispell-dictionary "polish")
+  ;; (setq ispell-dictionary "english")
+  (setq ispell-dictionary "polish")
 
   (add-hook 'text-mode-hook 'flyspell-mode)
   (add-hook 'text-mode-hook 'flyspell-buffer)

@@ -1,0 +1,210 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Django_s01_02"
+ (filename . "~/Programming/Python/Django/Django_s01_02/")
+ (front-context-string . "Django_s01_02\n  ")
+ (rear-context-string . "96 sie 10 20:21 ")
+ (position . 228))
+("Wyklad_Kamil_02_testy.tex"
+ (filename . "~/Basic-changing/Grafika3D-projekt/Wykład-02/Wyklad_Kamil_02_testy.tex")
+ (front-context-string . "\\draw[<->,>=Stea")
+ (rear-context-string . "zpicture}\n      ")
+ (position . 27956))
+("Lib Alia Doc"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/LibAliaDoc.bib")
+ (front-context-string . "@Comment #######")
+ (rear-context-string)
+ (position . 1))
+("Chodakiewicz"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Alia-doctrina-błędy-i-uwagi/Eseje-publicystyka-błędy-i-uwagi/Eseje-publicystyka-błędy-i-uwagi.tex")
+ (front-context-string . "\n\n\\CenterTB{Uwag")
+ (rear-context-string . "iSmierci2019} }\n")
+ (position . 3844))
+("TikZ-tests-s01-01.tex"
+ (filename . "~/Basic-changing/LaTeX/TikZ/TikZ-tests-s01-01.tex")
+ (front-context-string . "\n    % \\draw (0,")
+ (rear-context-string . "rc (-25:235:2);\n")
+ (position . 7348))
+("src"
+ (filename . "~/go/src/")
+ (front-context-string)
+ (rear-context-string . "96 lip 22 22:24 ")
+ (position . 195))
+("TikZ styles"
+ (filename . "~/Basic-changing/Grafika3D-projekt/Wykład-02/Wyklad_Kamil_02.tex")
+ (front-context-string . "% \\tikzstyle{vec")
+ (rear-context-string . "library{arrows}\n")
+ (position . 2713))
+("TikZ tests"
+ (filename . "~/Basic-changing/LaTeX/TikZ/TikZ-tests-s01-01.tex")
+ (front-context-string . "\n    \\draw[->,th")
+ (rear-context-string . " (0,\\radius,0);\n")
+ (position . 5051))
+("TikZ-s01-04.tex"
+ (filename . "~/Basic-changing/LaTeX/TikZ/TikZ-s01-04.tex")
+ (front-context-string . "#\n\n\n\n\n\n% % #####")
+ (rear-context-string . "################")
+ (position . 9230))
+("Wyklad_Kamil_02.tex"
+ (filename . "~/Basic-changing/Grafika3D-projekt/Wykład-02/Wyklad_Kamil_02.tex")
+ (front-context-string . " $\\mathbf{P}$ w ")
+ (rear-context-string . "półrzędne punktu")
+ (position . 42682))
+("Lib Phil Natur"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/LibPhilNatur.bib")
+ (front-context-string . "@Comment #######")
+ (rear-context-string)
+ (position . 1))
+("Lib Cultura"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/LibCultura.bib")
+ (front-context-string . "@Comment #######")
+ (rear-context-string)
+ (position . 1))
+("Rust"
+ (filename . "~/Programming/Rust/")
+ (front-context-string)
+ (rear-context-string . "96 maj  4 14:37 ")
+ (position . 208))
+("Fizyka matematyczna"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/ArticPhilNatur.bib")
+ (front-context-string . "FIZYKA MATEMATYC")
+ (rear-context-string . "###############\n")
+ (position . 28989))
+("Artic Phil Natur"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/ArticPhilNatur.bib")
+ (front-context-string . "@Comment #######")
+ (rear-context-string)
+ (position . 1))
+("Lib Litterae"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/LibLitterae.bib")
+ (front-context-string . "}\n\n\n@book{ Morri")
+ (rear-context-string . "ition =	 {{I}},\n")
+ (position . 1011))
+("Analiza-matematyczna-błędy-i-uwagi.tex"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Matematyka-błędy-i-uwagi/Analiza-matematyczna-błędy-i-uwagi/Analiza-matematyczna-błędy-i-uwagi.tex")
+ (front-context-string . ".}. Zapomnienie ")
+ (rear-context-string . "ej filozofowie} ")
+ (position . 30692))
+("Mail-Czesc-01.txt"
+ (filename . "~/Basic-changing/Do-napisania/Mail-Czesc-01.txt")
+ (front-context-string . "\n\nPozdrawiam\nKam")
+ (rear-context-string)
+ (position . 9))
+("Lib Historia"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/LibHistoria.bib")
+ (front-context-string . "@Comment #######")
+ (rear-context-string)
+ (position . 1))
+("Roszkowski 1914"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Alia-doctrina-błędy-i-uwagi/Historia-błędy-i-uwagi/Historia-Polski-błędy-i-uwagi.tex")
+ (front-context-string . "    % & & & & \\\\")
+ (rear-context-string . "ku & Z braku \\\\\n")
+ (position . 15943))
+("Artic DEUS Phil"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/ArticDEUSPhil.bib")
+ (front-context-string . "@Comment #######")
+ (rear-context-string)
+ (position . 1))
+("Artic Alia Doc"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/ArticAliaDoc.bib")
+ (front-context-string . "@Comment #######")
+ (rear-context-string)
+ (position . 1))
+("Lib DEUS Phil"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/LibDEUSPhil.bib")
+ (front-context-string . "@Comment #######")
+ (rear-context-string)
+ (position . 1))
+("Lib Math Info"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/LibMathInfo.bib")
+ (front-context-string . "@Comment #######")
+ (rear-context-string)
+ (position . 1))
+("Bibliografia"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/Bibliografia-i-pliki-LaTeXa/")
+ (front-context-string . "ArticAliaDoc.bib")
+ (rear-context-string . "89 cze 20 12:47 ")
+ (position . 255))
+("scripts"
+ (filename . "~/bin/scripts/")
+ (front-context-string . "confbackup.sh\n  ")
+ (rear-context-string . "92 cze 28 21:54 ")
+ (position . 207))
+("Python-3-s01-01.py"
+ (filename . "~/Programming/Python/Python-3/Python-3-s01-01.py")
+ (front-context-string)
+ (rear-context-string . "ame_board(game)\n")
+ (position . 917))
+("TikZ-s01-03.tex"
+ (filename . "~/Basic-changing/LaTeX/TikZ/TikZ-s01-03.tex")
+ (front-context-string . "\n% % ###########")
+ (rear-context-string . "###########\n\n\n\n\n")
+ (position . 11824))
+("Org"
+ (filename . "~/.emacs.d/config.org")
+ (front-context-string . "\n  #+END_SRC\n\n**")
+ (rear-context-string . "      :pin org)\n")
+ (position . 5066))
+("Django"
+ (filename . "~/Programming/Python/Django/")
+ (front-context-string)
+ (rear-context-string . "96 lip  7 14:59 ")
+ (position . 214))
+("Keyboard macros"
+ (filename . "~/.emacs.d/config.org")
+ (front-context-string . "\n      ;; ######")
+ (rear-context-string . "\n      ;; Python")
+ (position . 4884))
+("Facebook"
+ (filename . "~/Basic-changing/Do-napisania/Facebook.txt")
+ (front-context-string . "\n\n##############")
+ (rear-context-string . "##############\n\n")
+ (position . 3355))
+("Commands"
+ (filename . "~/Basic-changing/Wyniki/Article/Casimir-force-two-points.tex")
+ (front-context-string . "\n\n\\newcommand{\\T")
+ (rear-context-string . "thbb{R}^{ 3 }}\n\n")
+ (position . 3342))
+("Removed parts"
+ (filename . "~/Basic-changing/Wyniki/Article/Removed_parts.tex")
+ (front-context-string . "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+ (rear-context-string . "\\end{equation}\n\n")
+ (position . 164435))
+("makefile"
+ (filename . "~/Programming/C/makefile")
+ (front-context-string . "\n\n\n\nmake:\n	$(CC)")
+ (rear-context-string . "UM=01\nFILENUM=10")
+ (position . 91))
+("C"
+ (filename . "~/Programming/C/")
+ (front-context-string . "10wyklad65.pdf\n ")
+ (rear-context-string . "12 kwi 25  2013 ")
+ (position . 213))
+("Amerio"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/DEUS-i-filozofia-błędy-i-uwagi/DEUS-błędy-i-uwagi.tex")
+ (front-context-string . "    % & & & & \\\\")
+ (rear-context-string . "\n    % 425?????\n")
+ (position . 32133))
+("Świat Chrystusa"
+ (filename . "~/Basic-changing/Błędy-i-uwagi/DEUS-i-filozofia-błędy-i-uwagi/DEUS-błędy-i-uwagi.tex")
+ (front-context-string . " \\\\\n    %   & & ")
+ (rear-context-string . "1 & 1979) & 1979")
+ (position . 48681))
+("english"
+ (filename . "~/.emacs.d/config.org")
+ (front-context-string . "\n  ;; (setq ispe")
+ (rear-context-string . "onary \"english\")")
+ (position . 2704))
+("Polish"
+ (filename . "~/.emacs.d/config.org")
+ (front-context-string . "\n\n     (add-hook")
+ (rear-context-string . "ionary \"polish\")")
+ (position . 2825))
+("TikZ"
+ (filename . "~/Basic-changing/LaTeX/TikZ/TikZ-s01-04.tex")
+ (front-context-string . ")\n  \\end{tikzpic")
+ (rear-context-string . "(30:1cm) -- +(0,")
+ (position . 18729))
+)
