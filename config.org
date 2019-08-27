@@ -543,11 +543,13 @@ https://piotr.is/2010/emacs-as-the-ultimate-latex-editor/
 
 ** Packages for LaTeX
 *** LaTeX-pretty-symbols
-    -- display unicode in place of LaTeX commands
-    #+BEGIN_SRC emacs-lisp
-      (use-package latex-pretty-symbols
-	:ensure t)
-    #+END_SRC
+-- display unicode in place of LaTeX commands
+#+BEGIN_SRC emacs-lisp
+  (use-package latex-pretty-symbols
+    :ensure t
+    :config (global-prettify-symbols-mode t))
+  ;; Czy global-prettify-symbols-mode pochodzi z paczki latex-pretty-symbols?
+#+END_SRC
 
 
 

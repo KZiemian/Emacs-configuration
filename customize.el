@@ -17,7 +17,7 @@
  '(custom-enabled-themes (quote (nimbus)))
  '(custom-safe-themes
    (quote
-    ("39e8b7fbee43a26fe16b49190f11e04f4fd0ed6d99536f9f2c202d4b09a091fe" "8313c35da6a8f66f1998bba544e2300dac2c4f16fe5972227a0e27fd1fe630fb" "7eded71a68f518d9e4d4580b477a3fb03bf2d0ecc1234ff361a7fdc1591b1c9d" "04232a0bfc50eac64c12471607090ecac9d7fd2d79e388f8543d1c5439ed81f5" default)))
+    ("235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" "39e8b7fbee43a26fe16b49190f11e04f4fd0ed6d99536f9f2c202d4b09a091fe" "8313c35da6a8f66f1998bba544e2300dac2c4f16fe5972227a0e27fd1fe630fb" "7eded71a68f518d9e4d4580b477a3fb03bf2d0ecc1234ff361a7fdc1591b1c9d" "04232a0bfc50eac64c12471607090ecac9d7fd2d79e388f8543d1c5439ed81f5" default)))
  '(load-prefer-newer t)
  '(org-export-html-postamble nil)
  '(org-hide-leading-stars t)
@@ -25,7 +25,7 @@
  '(org-startup-indented t)
  '(package-selected-packages
    (quote
-    (go-mode go-play go-playground org-ac web-mode iedit multiple-cursors expand-region aggresive-indent hungry-delete nimbus-theme elpy jedi flycheck auctex htmlize rust-mode which-key counsel color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon latex-pretty-symbols undo-tree try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
+    (latex-pretty-symbols go-mode go-play go-playground org-ac web-mode iedit multiple-cursors expand-region aggresive-indent hungry-delete nimbus-theme elpy jedi flycheck auctex htmlize rust-mode which-key counsel color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon undo-tree try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
  '(use-package-verbose t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
