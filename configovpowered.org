@@ -49,21 +49,21 @@ File for configuration that can be useful and also problematic, so not always I 
 
 ** Python
 *** Elpy -- auto-completion???
-    #+BEGIN_SRC emacs-lisp
-      (use-package elpy
-	:ensure t
-	:defer t
-	:init (advice-add 'python-mode :before 'elpy-enable))
-    #+END_SRC
+#+BEGIN_SRC emacs-lisp
+  (use-package elpy
+    :ensure t
+    :defer t
+    :init (advice-add 'python-mode :before 'elpy-enable))
+#+END_SRC
 
 *** Jedi
-    -- auto-completion???
-    #+BEGIN_SRC emacs-lisp
-      (use-package jedi
-	:ensure t
-	:init
-	(add-hook 'python-mode-hook 'jedi:setup)
-	(add-hook 'python-mode-hook 'jedi:ac-setup)
-	:config
-	(setq jedi:complet-on-dot t))
-    #+END_SRC
+-- auto-completion???
+#+BEGIN_SRC emacs-lisp
+  (use-package jedi
+    :ensure t
+    :init
+    (add-hook 'python-mode-hook 'jedi:setup)
+    (add-hook 'python-mode-hook 'jedi:ac-setup)
+    :config
+    (setq jedi:complet-on-dot t))
+#+END_SRC

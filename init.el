@@ -79,7 +79,8 @@
 ;; #####
 ;; Load `configadd.org' file
 ;; Additiona configuration for Emacs
-(org-babel-load-file (expand-file-name "configadd.org" user-emacs-directory))
+(org-babel-load-file (expand-file-name "configadditional.org"
+				       user-emacs-directory))
 
 ;; #####
 ;; Load `configovpowered.org' file
