@@ -9,26 +9,26 @@ File for configuration that can be useful and also problematic, so not always I 
   Flycheck (and flymake) are powerful, but problematic so I temporally disable
   them.
 ** Flycheck
-   -- ????
-   #+BEGIN_SRC emacs-lisp
-     ;; (use-package flycheck
-     ;;   :ensure t
-     ;;   :init (global-flycheck-mode t))
-   #+END_SRC
+-- ????
+#+BEGIN_SRC emacs-lisp
+  ;; (use-package flycheck
+  ;;   :ensure t
+  ;;   :init (global-flycheck-mode t))
+#+END_SRC
 
 
 * Additional configuration of LaTeX in Emacs
 ** Flymake
-   #+BEGIN_SRC emacs-lisp
-     ;; (use-package flymake
-     ;;   :ensure t
-     ;;   :config
-     ;;   (defun flymake-get-tex-args (file-name)
-     ;;     (list "pdflatex"
-     ;; 	  (list "-file-line-error" "-draftmode"
-     ;; 		"-interaction=nonstopmode" file-name)))
-     ;;   (add-hook 'LaTeX-mode-hook 'flymake-mode))
-   #+END_SRC
+#+BEGIN_SRC emacs-lisp
+  ;; (use-package flymake
+  ;;   :ensure t
+  ;;   :config
+  ;;   (defun flymake-get-tex-args (file-name)
+  ;;     (list "pdflatex"
+  ;; 	  (list "-file-line-error" "-draftmode"
+  ;; 		"-interaction=nonstopmode" file-name)))
+  ;;   (add-hook 'LaTeX-mode-hook 'flymake-mode))
+#+END_SRC
 
 
 
