@@ -1,6 +1,4 @@
 #+TITLE: Emacs Configuration
-
-
 Structure of this file is based on Daniel Mai Emacs configuration https://github.com/danielmai/.emacs.d/.
 
 

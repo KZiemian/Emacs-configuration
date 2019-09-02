@@ -25,7 +25,7 @@
  '(org-startup-indented t)
  '(package-selected-packages
    (quote
-    (latex-pretty-symbols go-mode go-play go-playground org-ac web-mode iedit multiple-cursors expand-region aggresive-indent hungry-delete nimbus-theme elpy jedi flycheck auctex htmlize rust-mode which-key counsel color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon undo-tree try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
+    (py-autopep8 ag latex-pretty-symbols go-mode go-play go-playground org-ac web-mode iedit multiple-cursors expand-region aggresive-indent hungry-delete nimbus-theme elpy jedi flycheck auctex htmlize rust-mode which-key counsel color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon undo-tree try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
  '(use-package-verbose t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
