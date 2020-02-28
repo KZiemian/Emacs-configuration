@@ -483,6 +483,10 @@ To not forget this very promising theme.
 
 ** General LaTeX settings
 #+BEGIN_SRC emacs-lisp
+  (setq latex-run-command "lualatex")
+
+  ;; (setq latex-run-command "pdflatex  -file-line-error -interaction=nonstopmode")
+
   (setq TeX-auto-save t
         TeX-parse-self t
         TeX-save-query nil

@@ -9,7 +9,7 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+   ["#454545" "#d65946" "#6aaf50" "#baba36" "#598bc1" "#ab75c3" "#68a5e9" "#bdbdb3"])
  '(avy-case-fold-search t)
  '(avy-style (quote pre))
  '(beacon-color "saddle brown")
@@ -17,7 +17,7 @@
  '(custom-enabled-themes (quote (nimbus)))
  '(custom-safe-themes
    (quote
-    ("235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" "39e8b7fbee43a26fe16b49190f11e04f4fd0ed6d99536f9f2c202d4b09a091fe" "8313c35da6a8f66f1998bba544e2300dac2c4f16fe5972227a0e27fd1fe630fb" "7eded71a68f518d9e4d4580b477a3fb03bf2d0ecc1234ff361a7fdc1591b1c9d" "04232a0bfc50eac64c12471607090ecac9d7fd2d79e388f8543d1c5439ed81f5" default)))
+    ("ebc35c8e71983b8401562900abb28feedf4d8fcdfcdea35b3da8449d78ebecc6" "e14e8e4ecae1b4e0983367c6ab7437720f10b85865549b9ea329be2c2eaa9e80" "3ba3197afe5418489acb6da4d12fb0fd3fd114ecc70a06598fb143e92a53e8f4" "391e25584255938e534539b4a3a616912fd702c3513bde7c2813b589d6793f0a" "709ad9e93389b4bb8a2bcb46665f550f91e9bf454f23cbf4b4bbe85675d69ed9" "96d217b4af0ed02111ae8eb6e28e0ed90fdbeed77aeb3267c361b0b13438145a" "75cce15f30f64af33ba3f3f987861b26eb78f9d264f51d69aa0578d5bf618c9d" "9f9d5a42d5e637ffa3e95e5bcb4777cd66ce3dc36f85518b112f74f388e9ab59" "235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" "39e8b7fbee43a26fe16b49190f11e04f4fd0ed6d99536f9f2c202d4b09a091fe" "8313c35da6a8f66f1998bba544e2300dac2c4f16fe5972227a0e27fd1fe630fb" "7eded71a68f518d9e4d4580b477a3fb03bf2d0ecc1234ff361a7fdc1591b1c9d" "04232a0bfc50eac64c12471607090ecac9d7fd2d79e388f8543d1c5439ed81f5" default)))
  '(load-prefer-newer t)
  '(org-export-html-postamble nil)
  '(org-hide-leading-stars t)
@@ -25,7 +25,7 @@
  '(org-startup-indented t)
  '(package-selected-packages
    (quote
-    (py-autopep8 ag latex-pretty-symbols go-mode go-play go-playground org-ac web-mode iedit multiple-cursors expand-region aggresive-indent hungry-delete nimbus-theme elpy jedi flycheck auctex htmlize rust-mode which-key counsel color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon undo-tree try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
+    (auctex undo-tree chronometer chess chronos crux ac-c-headers ac-clang ac-emoji ac-etags ac-helm ac-html ac-html-angular ac-ispell ac-slime atomic-chrome auctex-lua py-autopep8 ag latex-pretty-symbols go-play go-playground org-ac web-mode iedit multiple-cursors expand-region aggresive-indent hungry-delete jedi flycheck htmlize color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window)))
  '(use-package-verbose t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
