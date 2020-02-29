@@ -574,9 +574,10 @@ https://piotr.is/2010/emacs-as-the-ultimate-latex-editor/
 ** `Python'
 *** Setting Python interpreter to Python3
 #+BEGIN_SRC emacs-lisp
-  (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
-  (setq python-shell-interpreter "ipython3"
-        python-shell-interpreter-args "-i")
+  (setq py-python-command "python3")
+  ;; (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
+  ;; (setq python-shell-interpreter "ipython3"
+  ;;       python-shell-interpreter-args "-i")
 #+END_SRC
 
 ** `Rust-mode' -- Emacs mode for Rust programming language
