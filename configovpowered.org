@@ -73,3 +73,4 @@ Potrzebuje też paczki Emacsa ag. py-autopep8?
     :config
     (setq jedi:complet-on-dot t))
 #+END_SRC
+

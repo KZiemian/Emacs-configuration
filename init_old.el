@@ -1,8 +1,3 @@
-;; #################
-;; Load the `config.org' file
-(org-babel-load-file (expand-file-name "configuration-org/config.org" user-emacs-directory))
-
-
 ;; #####
 ;; Load `configadd.org' file
 ;; Additiona configuration for Emacs

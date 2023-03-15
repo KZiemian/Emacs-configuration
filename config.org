@@ -1,29 +1,10 @@
 * Configuration of basic build-in features
 
-** Setting up built-in variables
-#+BEGIN_SRC emacs-lisp
-  (setq next-line-add-newlines t)
-  (setq sentence-end-double-space nil)
-
-  (setq save-interprogram-paste-before-kill t)
-#+END_SRC
-
-** Setting up predictors
-Change question from "yes or no" to "y or n".
-#+BEGIN_SRC emacs-lisp
-  (fset 'yes-or-no-p 'y-or-n-p)
-#+END_SRC
-
-** Releasing built-in keychords (?????)
-#+BEGIN_SRC emacs-lisp
-#+END_SRC
-
 ** Global keychords
 #+BEGIN_SRC emacs-lisp
-  (global-set-key (kbd "RET") 'newline-and-indent)
-  (global-set-key [f1] 'shell)
-  (global-set-key [C-tab] 'other-window)  ; Don't work in org mode,
-  ;; correct that
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key [f1] 'shell)
+(global-set-key [C-tab] 'other-window)
 #+END_SRC
 
 ** Global minor modes
@@ -108,7 +89,7 @@ Emacs don't know this variable?!?!
 
 
 * Advanced build-up features
-
+  
 ** Keyboard's macros
 *** Keybord's macros for core things.
 Make better title
@@ -259,8 +240,8 @@ Unicode bullets for **org-mode**
   #+END_SRC
 
 
-* General packages
-  These packages are used by wild area of buffers.
+General packages
+
 
 ** Ace-window
 Fast moving to numbered windows.
@@ -304,13 +285,7 @@ or anything you prefer.
            ("M-g e" . avy-goto-word-0)))
 #+END_SRC
 
-** Beacon
-Wave showing where point is
-#+BEGIN_SRC emacs-lisp
-  (use-package beacon
-    :ensure t
-    :config (beacon-mode t))
-#+END_SRC
+
 
 ** Color-theme-modern
 Packages with many Emacs' themes
