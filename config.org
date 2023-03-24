@@ -5,32 +5,8 @@
 
 
   (global-auto-revert-mode 1)
-  (setq auto-revert-verbose nil)		; Unknown variable?
   (global-set-key (kbd "<f5>") 'revet-buffer)
-  
 
-** Global hooks
-#+BEGIN_SRC emacs-lisp
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
-  ;; Remove additional white spaces from the end of the line and file
-  ;; Comment it out if you work with CCLDoc
-#+END_SRC
-
-
-
-** Configuration of documentation
-Emacs don't know this variable?!?!
-#+BEGIN_SRC emacs-lisp
-  (setq apropos-sort-by-score t)
-#+END_SRC
-
-** Save customize settings to separate file, not to [[file:init.el][init.el]] file.
-#+BEGIN_SRC emacs-lisp
-(setq custom-file
-        (expand-file-name "customize.el" user-emacs-directory))
-
-  (load custom-file t)
-#+END_SRC
 
 ** Setting up auto-correction
 #+BEGIN_SRC emacs-lisp
@@ -55,7 +31,7 @@ Emacs don't know this variable?!?!
 
 
 * Advanced build-up features
-  
+
 ** Keyboard's macros
 *** Keybord's macros for core things.
 Make better title

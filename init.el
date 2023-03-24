@@ -21,6 +21,8 @@
 
 ;; Disable start up message.
 (setq inhibit-startup-message t)
+;; Set up initial *scratch* content to nothing (empty string).
+(setq initial-scratch-messge "")
 
 
 
@@ -55,7 +57,8 @@
 
 
 ;; ##################
-;; `Use-package' -- bootstraping package to manage packages
+;; `Use-package' -- bootstraping `use-package' package to manage
+;; other packages.
 ;; `Bind-key' -- ????
 ;; `Diminish' -- ????
 
@@ -119,14 +122,3 @@
 (use-package go-mode
   :ensure t)
 ;; #+END_SRC
-
-
-
-
-
-
-
-
-
-
-

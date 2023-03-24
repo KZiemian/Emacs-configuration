@@ -5,7 +5,7 @@ https://github.com/danielmai/.emacs.d/.
 * Configuration of basic build-in features
 
 ** Setting up basic built-in variables
-  
+
 #+BEGIN_SRC emacs-lisp
 (setq next-line-add-newlines t)
 (setq sentence-end-double-space nil)
@@ -17,7 +17,7 @@ https://github.com/danielmai/.emacs.d/.
 Change question from "yes or no" to "y or n".
 
 #+BEGIN_SRC emacs-lisp
-(fset 'yes-or-no-p 'y-or-n-p)
+(defalias 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
 
 ** Global keychords
@@ -30,11 +30,12 @@ Change question from "yes or no" to "y or n".
 
 Key binding below don't work in org mode. How to fix that?
 #+BEGIN_SRC emacs-lisp
-(global-set-key [C-tab] 'other-window) 
+(global-set-key [C-tab] 'other-window)
 #+END_SRC
 
 ** Global minor modes
-This minor modes are turn on in all Emacs windows
+These minor modes are turn on in all Emacs windows, despite the major
+mode.
 
 Shows number of line on the left edge of window.
 #+BEGIN_SRC emacs-lisp
@@ -46,23 +47,49 @@ Show number of colume where Emacs point is.
 (column-number-mode t)
 #+END_SRC
 
-Long lines won't be wrapped, but splitted between various lines of
-Emacs buffer
+Lines longer that Emacs window won't be wrapped, but splitted between few lines.
 #+BEGIN_SRC emacs-lisp
 (global-visual-line-mode 1)
 #+END_SRC
 
+Line where point is will be highlighted.
 #+BEGIN_SRC emacs-lisp
-;; Highlighting the line where Emacs point is.
 (global-hl-line-mode t)
-;; Switch on automatic parentis pairing.
-(electric-pair-mode t)
 #+END_SRC
 
 Allowing undoing of windows changes.
 #+BEGIN_SRC emacs-lisp
 (winner-mode 1)
 #+END_SRC
+
+Switch on automatic parentis pairing.
+#+BEGIN_SRC emacs-lisp
+(electric-pair-mode t)
+#+END_SRC
+
+I don't know what code below is doing.
+
+Somethings is wrong with code below? Maybe, I need to check it.
+#+BEGIN_SRC emacs-lisp
+(setq outline-minor-mode-prefix "\C-c \C-o")
+#+END_SRC
+
+
+** Global hooks
+These hooks will be avalible in any Emacs windows and major modes.
+
+After calling function to save a buffer and before it is saved,
+Emacs will remove all whitespaces from the end of the line, with
+exception for empty lines that are not at the ending of the file,
+and all the empty lines from the end of the file.
+
+As a result all non empty lines will end with non-whitespace character.
+Empty lines that are not at the end of the file (the are follow by some
+proper text) are reduced to single newline character.
+#+BEGIN_SRC emacs-lisp
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+#+END_SRC
+
 
 ** Settings of customize mode (???) in Emacs
 Settings will be saved in separate file customize.el, not in init.el
@@ -74,7 +101,7 @@ Setting location of `customize.el' file.
   (concat user-emacs-directory "Customize-file/customize.el"))
 #+END_SRC
 
-Settings of custiomize mode will be loaded from customize.el file.
+Settings of custiomize mode will be loaded from `customize.el' file.
 #+BEGIN_SRC emacs-lisp
 (load custom-file t)
 #+END_SRC
@@ -96,4 +123,3 @@ Settings of custiomize mode will be loaded from customize.el file.
 	     (concat user-emacs-directory "auto-save-list/")
 	     t)))
 #+END_SRC
-
