@@ -1,0 +1,20 @@
+#+TITLE General packages
+In this file we configure packages that should be avaliable in any Emacs 
+buffer and major mode. They are listed in alphabetical order.
+
+* Achievements ;-)
+
+#+BEGIN_SRC emacs-lisp
+(use-package achievements
+  :ensure t
+  :config (achievements-mode t))
+#+END_SRC
+
+* Beacon
+When you move point, the wave appears showing where it is.
+
+#+BEGIN_SRC emacs-lisp
+(use-package beacon
+  :ensure t
+  :config (beacon-mode t))
+#+END_SRC

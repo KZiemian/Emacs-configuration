@@ -56,6 +56,7 @@
 
 ;; ##################
 ;; `Use-package' -- bootstraping package to manage packages
+;; `Bind-key' -- ????
 ;; `Diminish' -- ????
 
 (unless (or (package-installed-p 'use-package)
@@ -90,15 +91,6 @@
 (org-babel-load-file
  (concat user-emacs-directory "Configuration-org/configuration-basic.org"))
 
-;; !!!!!!!!!!
-;; All code below should at the end be in file
-;; Configuration-org/configuation-basic.org, but since loading this file don't
-;; work at this moment, I just placed it here.
-
-
-
-
-
 
 
 
@@ -106,28 +98,11 @@
 ;; #################
 ;; Load the `general-packages.org' file.
 
-;; !!!!!!!!!!
-;; All code below should at the end be in file
-;; Configuration-org/general-packages.org, but since loading this file don't
-;; work at this moment, I just placed it here.
+(org-babel-load-file
+ (concat user-emacs-directory "Configuration-org/general-packages.org"))
 
-;; #+TITLE Overpowered cofiguration for Emacs
-;; These packages are used by wild area of buffers.
 
-;; ** Achievements (;-)
-;; #+BEGIN_SRC emacs-lisp
-  (use-package achievements
-    :ensure t
-    :config (achievements-mode t))
-;; #+END_SRC
 
-;; ** Beacon
-;; Wave showing where point is
-;; #+BEGIN_SRC emacs-lisp
-  (use-package beacon
-    :ensure t
-    :config (beacon-mode t))
-;; #+END_SRC
 
 
 ;; #################

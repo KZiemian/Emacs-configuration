@@ -1,8 +1,6 @@
 * Configuration of basic build-in features
 
 ** Global minor modes
-  (winner-mode 1)         ; Allow to undo windows changes
-
   (setq outline-minor-mode-prefix "\C-c \C-o") ; Somethings don't work
 
 

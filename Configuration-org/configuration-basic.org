@@ -1,10 +1,11 @@
 #+TITLE: Configuration of Emacs
-Structure of this file is based on Daniel Mai's configuration of Emacs https://github.com/danielmai/.emacs.d/.
+Structure of this file is based on Daniel Mai's configuration of Emacs
+https://github.com/danielmai/.emacs.d/.
 
 * Configuration of basic build-in features
 
 ** Setting up basic built-in variables
-
+  
 #+BEGIN_SRC emacs-lisp
 (setq next-line-add-newlines t)
 (setq sentence-end-double-space nil)
@@ -35,20 +36,33 @@ Key binding below don't work in org mode. How to fix that?
 ** Global minor modes
 This minor modes are turn on in all Emacs windows
 
+Shows number of line on the left edge of window.
 #+BEGIN_SRC emacs-lisp
-;; Shows number of line on the left edge of window.
 (global-linum-mode t)
-;; Show number of colume where Emacs point is.
+#+END_SRC
+
+Show number of colume where Emacs point is.
+#+BEGIN_SRC emacs-lisp
 (column-number-mode t)
-;; Splitiing long lines between different lines of Emacs buffer.
+#+END_SRC
+
+Long lines won't be wrapped, but splitted between various lines of
+Emacs buffer
+#+BEGIN_SRC emacs-lisp
 (global-visual-line-mode 1)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
 ;; Highlighting the line where Emacs point is.
 (global-hl-line-mode t)
 ;; Switch on automatic parentis pairing.
 (electric-pair-mode t)
 #+END_SRC
 
-
+Allowing undoing of windows changes.
+#+BEGIN_SRC emacs-lisp
+(winner-mode 1)
+#+END_SRC
 
 ** Settings of customize mode (???) in Emacs
 Settings will be saved in separate file customize.el, not in init.el
