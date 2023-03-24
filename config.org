@@ -36,16 +36,7 @@ Packages with many Emacs' themes
     )
 #+END_SRC
 
-** Counsel
-Need for Swiper packages
-#+BEGIN_SRC emacs-lisp
-  (use-package counsel
-    :ensure t
-    :bind
-    (("M-y" . counsel-yank-pop)
-     :map ivy-minibuffer-map
-     ("M-y" . ivy-next-line)))
-#+END_SRC
+
 
 ** Expand-region
 #+BEGIN_SRC emacs-lisp
@@ -68,18 +59,6 @@ character. At least I understand it like that.
 #+BEGIN_SRC emacs-lisp
   (use-package iedit
     :ensure t)
-#+END_SRC
-
-** Ivy
-?!?!
-#+BEGIN_SRC emacs-lisp
-  (use-package ivy
-    :ensure t
-    :diminish (ivy-mode)                  ; Why???
-    :config
-    (ivy-mode 1)
-    (setq ivy-use-virtual-buffers t)
-    (setq ivy-display-style 'fancy))
 #+END_SRC
 
 ** Lorem-ipsum
@@ -128,14 +107,10 @@ To not forget this very promising theme.
   (use-package swiper
     :ensure t
     :bind
-           ("C-h l" . 'counsel-find-library)
-           ("C-h i" . 'counsel-info-lookup-symbol)
-           ("C-c u" . 'counsel-unicode-char)
-           ("C-c g" . 'counsel-git)
-           ("C-c j" . 'counsel-git-grep)
-           ("C-c k" . 'counsel-ag)
-           ("C-x l" . 'counsel-locate)
-           ("C-S-o" . 'counsel-rhythmbox)
+    ("C-c j" . 'counsel-git-grep)
+    ("C-c k" . 'counsel-ag)
+    ("C-x l" . 'counsel-locate)
+    ("C-S-o" . 'counsel-rhythmbox)
            ;; Alternative keychords
            ;; ("<f4>" . 'ivy-resume)
            ;; ("<f2> f" . 'counsel-describe-function)

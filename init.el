@@ -128,14 +128,5 @@
 ;; #################
 ;; Load the `programming-languages.org' file.
 
-;; !!!!!!!!!!
-;; All code below should at the end be in file
-;; Configuration-org/programminglanguages.org, but since loading this file don't
-;; work at this moment, I just placed it here.
-
-
-;; Go language major mode
-;; #+BEGIN_SRC emacs-lisp
-(use-package go-mode
-  :ensure t)
-;; #+END_SRC
+(org-babel-load-file
+ (concat user-emacs-directory "Configuration-org/programming-languages.org"))
