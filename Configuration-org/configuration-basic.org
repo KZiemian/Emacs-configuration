@@ -1,6 +1,6 @@
-#+TITLE: Configuration of Emacs
-Structure of this file is based on Daniel Mai's configuration of Emacs
-https://github.com/danielmai/.emacs.d/.
+#+TITLE: Basic configuration of Emacs
+This and all others Emacs configuration files own huge debt to
+[Daniel Mai](https://github.com/danielmai/.emacs.d/) ???
 
 * Configuration of basic build-in features
 
@@ -13,7 +13,7 @@ https://github.com/danielmai/.emacs.d/.
 (setq save-interprogram-paste-before-kill t)
 #+END_SRC
 
-** Setting up predicators
+** Predicators
 Change question from "yes or no" to "y or n".
 
 #+BEGIN_SRC emacs-lisp
@@ -33,9 +33,11 @@ Key binding below don't work in org mode. How to fix that?
 (global-set-key [C-tab] 'other-window)
 #+END_SRC
 
-** Global minor modes
-These minor modes are turn on in all Emacs windows, despite the major
-mode.
+
+
+** Global build-in minor modes
+These build-in minor modes are turn on in all Emacs windows, despite
+the major mode.
 
 Shows number of line on the left edge of window.
 #+BEGIN_SRC emacs-lisp
@@ -74,9 +76,19 @@ Somethings is wrong with code below? Maybe, I need to check it.
 (setq outline-minor-mode-prefix "\C-c \C-o")
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp
+(global-auto-revert-mode 1)
+#+END_SRC
 
-** Global hooks
-These hooks will be avalible in any Emacs windows and major modes.
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "<F5>") 'revert-buffer)
+#+END_SRC
+
+
+
+** Global build-in hooks
+These build-in hooks will be avalible in any Emacs windows and major
+modes.
 
 After calling function to save a buffer and before it is saved,
 Emacs will remove all whitespaces from the end of the line, with
@@ -86,9 +98,55 @@ and all the empty lines from the end of the file.
 As a result all non empty lines will end with non-whitespace character.
 Empty lines that are not at the end of the file (the are follow by some
 proper text) are reduced to single newline character.
+
 #+BEGIN_SRC emacs-lisp
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+END_SRC
+
+
+
+** Setting of backups files management
+???? Add explenation what this code do.
+
+Setting up directory in which backups files will be stored.
+#+BEGIN_SRC emacs-lisp
+(setq backup-directory-alist
+  (list (cons "." (concat user-emacs-directory "EmacsBackups/"))))
+#+END_SRC
+
+????
+#+BEGIN_SRC emacs-lisp
+(setq
+  delete-old-versions 1
+  version-control t
+  vc-make-backup-files t
+  auto-save-file-name-transforms
+  (list
+    (list ".*"
+      (concat user-emacs-directory "auto-save-list/")
+        t)))
+#+END_SRC
+
+
+
+** Org-mode
+Configuration of gigantic **org-mode**.
+
+#+BEGIN_SRC emacs-lisp
+(use-package org
+  :ensure t
+  :pin org)
+#+END_SRC
+
+????
+#+BEGIN_SRC emacs-lisp
+(custom-set-variables
+  '(org-export-html-postamble nil)
+  '(org-hide-leading-stars t)
+  '(org-startup-folded (quote overview))
+  '(org-startup-indented t))
+#+END_SRC
+
 
 
 ** Settings of customize mode (???) in Emacs
@@ -108,18 +166,15 @@ Settings of custiomize mode will be loaded from `customize.el' file.
 
 
 
-** Setting of backups files management
-???? Add explenation what this code do.
-
+** Settings of auto-correction of normal languages
+Setting polish dictiornary for use by auto-correction program
 #+BEGIN_SRC emacs-lisp
-(setq backup-directory-alist
-      (list (cons "." (concat user-emacs-directory "EmacsBackups/")))
-      delete-old-versions 1
-      version-control t
-      vc-make-backup-files t
-      auto-save-file-name-transforms
-      (list
-       (list ".*"
-	     (concat user-emacs-directory "auto-save-list/")
-	     t)))
+;; (setq ispell-dictionary "english")
+(setq ispell-dictionary "polish")
+#+END_SRC
+
+Turning on auto-correction in standard .txt files.
+#+BEGIN_SRC emacs-lisp
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook 'flyspell-buffer)
 #+END_SRC

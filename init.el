@@ -22,7 +22,7 @@
 ;; Disable start up message.
 (setq inhibit-startup-message t)
 ;; Set up initial *scratch* content to nothing (empty string).
-(setq initial-scratch-messge "")
+(setq initial-scratch-message "")
 
 
 
@@ -86,11 +86,18 @@
 
 
 ;; #################
+;; Load the `personal-information.org' file.
+
+;; Backup file for `personal-information.org' is in directory
+;; $HOME/Private-backups/Emacs-backups.
+
+
+
+
+
+;; #################
 ;; Load the `configuration-basic.org' file.
 
-;; Command below don't work, because it want to open file
-;; configuration-basics.el (Emacs Lisp file). At this moment I don't know
-;; how to fix it. Now it works.
 (org-babel-load-file
  (concat user-emacs-directory "Configuration-org/configuration-basic.org"))
 

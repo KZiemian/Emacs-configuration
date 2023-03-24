@@ -1,143 +1,14 @@
 * Configuration of basic build-in features
 
-** Global minor modes
-  (setq outline-minor-mode-prefix "\C-c \C-o") ; Somethings don't work
-
-
-  (global-auto-revert-mode 1)
-  (global-set-key (kbd "<f5>") 'revet-buffer)
-
-
 ** Setting up auto-correction
 #+BEGIN_SRC emacs-lisp
-  ;; (setq ispell-program-name "aspell")  ; By default is `aspell'
-  ;; (setq ispell-dictionary "english")
-  (setq ispell-dictionary "polish")
-
-  (add-hook 'text-mode-hook 'flyspell-mode)
-  (add-hook 'text-mode-hook 'flyspell-buffer)
-
-  (add-hook 'LaTeX-mode-hook 'flyspell-mode)
-  (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 #+END_SRC
-
-
-
-
-
-
-
-
-
-
-* Advanced build-up features
-
-** Keyboard's macros
-*** Keybord's macros for core things.
-Make better title
-#+BEGIN_SRC emacs-lisp
-  (fset 'error-line
-     [tab ?& ?  ?& ?  ?& ?  ?& ?  ?\\ ?\\ ?\M-m])
-#+END_SRC
-
-*** Keybord's macros for temporary things.
-These macros will be removed, when things will be done.
-#+BEGIN_SRC emacs-lisp
-  ;; (fmakunbound 'name-of-macro)
-  ;; (fmakunbound 'HereIs)
-
-  ;; For correcting word of dr Rao
-
-  (fset 'HereIs-1
-        "Here is \"\C-f, should be \"\C-f.\342\342\342\C-f\C-f\C-f\C-f")
-
-  (put 'HereIs-1 'kmacro t)
-
-  (fset 'HereIs-many
-        "Here is \"\C-f, should be \"\C-f. ")
-
-  (put 'HereIs-many 'kmacro t)
-
-  ;; Macro for inserting line with title.
-  (fset 'Title
-        "Title: .\C-b\"")
-
-  (put 'Title 'kmacro t)
-
-  (fset 'Titles
-        "Titles: \"\C-f.\C-b\C-b\C-b, \C-b\C-b\"")
-
-  (put 'Titles 'kmacro t)
-
-  (fset 'Strange-text
-        "Strange text: .\C-b\"")
-
-  (put 'Strange-text 'kmacro t)
-
-  (fset 'Strange-text-many
-        [?S ?t ?r ?a ?n ?g ?e ?- ?t ?e ?x ?t ?: ?  ?\" ?\C-e ?. return])
-
-  (put 'Strange-text-many 'kmacro t)
-
-  (fset 'Tenth-paragraphs
-        " paragraph.\C-a")
-
-  (put 'Tenth-paragraphs 'kmacro t)
-
-  (fset 'th-paragraph
-        "th paragraph.\C-a")
-
-  (put 'th-paragraph 'kmacro t)
-
-#+END_SRC
-
-*** Keyboards macros for marking place in the text
-#+BEGIN_SRC emacs-lisp
-  ;; ###########################
-  ;; Emacs Lisp
-  ;; ###########################
-
-  (fset 'elisp-30
-        [?\; ?\; ?  ?\C-2 ?\C-7 ?# ?\C-n])
-
-  (fset 'elisp-13
-        [?\; ?\; ?  ?\C-1 ?\C-0 ?# ?\C-n])
-
-  (fset 'elisp-section
-        [?\; ?\; ?  ?\C-2 ?7 ?# ?\C-n ?\; ?\; ?  ?\C-n ?\; ?\; ?  ?\C-n ?\; ?\; ?  ?\C-2 ?7 ?# ?\C-p ?\C-p])
-
-
-
-  ;; ###########################
-  ;; Python
-  ;; ###########################
-
-
-  (fset 'python-30
-        [?\C-3 ?\C-0 ?# ?\C-n])
-
-  (fset 'python-section
-        [?\C-3 ?\C-0 ?# ?\C-n ?# ?  ?\C-n ?\C-3 ?\C-0 ?# ?\C-p])
-#+END_SRC
-
 
 * Org-mode
 Configuration of giant **org-mode**.
 #+BEGIN_SRC emacs-lisp
-  (use-package org
-    :ensure t
-    :pin org)
-
-
-  (custom-set-variables
-   ;; '(org-directory "~/????")
-   ;; '(org-default-notes-file (concat org-directory "/notes.org ????"))
-   '(org-export-html-postamble nil)
-   '(org-hide-leading-stars t)
-   '(org-startup-folded (quote overview))
-   '(org-startup-indented t))
-
-
   (setq org-file-apps (append '(("\\.pdf\\" . "evince %s") org-file-apps)))
 
 
@@ -195,13 +66,6 @@ Fast moving to numbered windows.
     (custom-set-faces
      '(aw-leading-char-face
        ((t (:inherit ace-jump-face-foreground :height 3.0))))))
-#+END_SRC
-
-** Achievements (;-)
-#+BEGIN_SRC emacs-lisp
-  (use-package achievements
-    :ensure t
-    :config (achievements-mode t))
 #+END_SRC
 
 ** Auto-complete
@@ -496,4 +360,97 @@ https://piotr.is/2010/emacs-as-the-ultimate-latex-editor/
     :ensure t
     ;; :config (setq rust-format-on-save t)
     )
+#+END_SRC
+
+
+
+
+* Advanced build-up features
+
+** Keyboard's macros
+*** Keybord's macros for core things.
+Make better title
+#+BEGIN_SRC emacs-lisp
+  (fset 'error-line
+     [tab ?& ?  ?& ?  ?& ?  ?& ?  ?\\ ?\\ ?\M-m])
+#+END_SRC
+
+*** Keybord's macros for temporary things.
+These macros will be removed, when things will be done.
+#+BEGIN_SRC emacs-lisp
+  ;; (fmakunbound 'name-of-macro)
+  ;; (fmakunbound 'HereIs)
+
+  ;; For correcting word of dr Rao
+
+  (fset 'HereIs-1
+        "Here is \"\C-f, should be \"\C-f.\342\342\342\C-f\C-f\C-f\C-f")
+
+  (put 'HereIs-1 'kmacro t)
+
+  (fset 'HereIs-many
+        "Here is \"\C-f, should be \"\C-f. ")
+
+  (put 'HereIs-many 'kmacro t)
+
+  ;; Macro for inserting line with title.
+  (fset 'Title
+        "Title: .\C-b\"")
+
+  (put 'Title 'kmacro t)
+
+  (fset 'Titles
+        "Titles: \"\C-f.\C-b\C-b\C-b, \C-b\C-b\"")
+
+  (put 'Titles 'kmacro t)
+
+  (fset 'Strange-text
+        "Strange text: .\C-b\"")
+
+  (put 'Strange-text 'kmacro t)
+
+  (fset 'Strange-text-many
+        [?S ?t ?r ?a ?n ?g ?e ?- ?t ?e ?x ?t ?: ?  ?\" ?\C-e ?. return])
+
+  (put 'Strange-text-many 'kmacro t)
+
+  (fset 'Tenth-paragraphs
+        " paragraph.\C-a")
+
+  (put 'Tenth-paragraphs 'kmacro t)
+
+  (fset 'th-paragraph
+        "th paragraph.\C-a")
+
+  (put 'th-paragraph 'kmacro t)
+
+#+END_SRC
+
+*** Keyboards macros for marking place in the text
+#+BEGIN_SRC emacs-lisp
+  ;; ###########################
+  ;; Emacs Lisp
+  ;; ###########################
+
+  (fset 'elisp-30
+        [?\; ?\; ?  ?\C-2 ?\C-7 ?# ?\C-n])
+
+  (fset 'elisp-13
+        [?\; ?\; ?  ?\C-1 ?\C-0 ?# ?\C-n])
+
+  (fset 'elisp-section
+        [?\; ?\; ?  ?\C-2 ?7 ?# ?\C-n ?\; ?\; ?  ?\C-n ?\; ?\; ?  ?\C-n ?\; ?\; ?  ?\C-2 ?7 ?# ?\C-p ?\C-p])
+
+
+
+  ;; ###########################
+  ;; Python
+  ;; ###########################
+
+
+  (fset 'python-30
+        [?\C-3 ?\C-0 ?# ?\C-n])
+
+  (fset 'python-section
+        [?\C-3 ?\C-0 ?# ?\C-n ?# ?  ?\C-n ?\C-3 ?\C-0 ?# ?\C-p])
 #+END_SRC
