@@ -1,0 +1,85 @@
+#+TITLE: Configuration of Emacs
+Structure of this file is based on Daniel Mai's configuration of Emacs https://github.com/danielmai/.emacs.d/.
+
+* Configuration of basic build-in features
+
+** Setting up basic built-in variables
+
+#+BEGIN_SRC emacs-lisp
+(setq next-line-add-newlines t)
+(setq sentence-end-double-space nil)
+
+(setq save-interprogram-paste-before-kill t)
+#+END_SRC
+
+** Setting up predicators
+Change question from "yes or no" to "y or n".
+
+#+BEGIN_SRC emacs-lisp
+(fset 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
+
+** Global keychords
+????
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key [F1] 'shell)
+#+END_SRC
+
+Key binding below don't work in org mode. How to fix that?
+#+BEGIN_SRC emacs-lisp
+(global-set-key [C-tab] 'other-window) 
+#+END_SRC
+
+** Global minor modes
+This minor modes are turn on in all Emacs windows
+
+#+BEGIN_SRC emacs-lisp
+;; Shows number of line on the left edge of window.
+(global-linum-mode t)
+;; Show number of colume where Emacs point is.
+(column-number-mode t)
+;; Splitiing long lines between different lines of Emacs buffer.
+(global-visual-line-mode 1)
+;; Highlighting the line where Emacs point is.
+(global-hl-line-mode t)
+;; Switch on automatic parentis pairing.
+(electric-pair-mode t)
+#+END_SRC
+
+
+
+** Settings of customize mode (???) in Emacs
+Settings will be saved in separate file customize.el, not in init.el
+file.
+
+Setting location of `customize.el' file.
+#+BEGIN_SRC emacs-lisp
+(setq custom-file
+  (concat user-emacs-directory "Customize-file/customize.el"))
+#+END_SRC
+
+Settings of custiomize mode will be loaded from customize.el file.
+#+BEGIN_SRC emacs-lisp
+(load custom-file t)
+#+END_SRC
+
+
+
+** Setting of backups files management
+???? Add explenation what this code do.
+
+#+BEGIN_SRC emacs-lisp
+(setq backup-directory-alist
+      (list (cons "." (concat user-emacs-directory "EmacsBackups/")))
+      delete-old-versions 1
+      version-control t
+      vc-make-backup-files t
+      auto-save-file-name-transforms
+      (list
+       (list ".*"
+	     (concat user-emacs-directory "auto-save-list/")
+	     t)))
+#+END_SRC
+

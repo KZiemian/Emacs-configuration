@@ -9,11 +9,13 @@
   ;; of the frame.
   ;; (menu-bar-mode 1)
   (menu-bar-mode -1)
+  ;; Analogous as in the case of manu-bar-mode.
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
   ;; I don't know what this thing is doing, but I probably never use
   ;; tooltips, so I guess this doesn't matter.
   (tooltip-mode -1)
+  ;; Setting the saize of main Emacs frame.
   (set-frame-size (selected-frame) 80 100))
 
 
@@ -70,6 +72,11 @@
 (eval-when-compile
   (require 'use-package))
 (require 'bind-key)
+;; Line below is from Daniel Mai's Emacs configuration. It has comment
+;; that you should add it if you use :diminish. I don't know
+;; what is :diminish doing.
+(require 'diminish)
+
 
 
 
@@ -79,45 +86,25 @@
 
 ;; Command below don't work, because it want to open file
 ;; configuration-basics.el (Emacs Lisp file). At this moment I don't know
-;; how to fix it.
-;; (org-babel-load-file
-;;  (concat user-emacs-directory "Configuration-org/configuration-basic.org"))
+;; how to fix it. Now it works.
+(org-babel-load-file
+ (concat user-emacs-directory "Configuration-org/configuration-basic.org"))
 
 ;; !!!!!!!!!!
 ;; All code below should at the end be in file
 ;; Configuration-org/configuation-basic.org, but since loading this file don't
 ;; work at this moment, I just placed it here.
 
-;; * Configuration of basic build-in features
 
-;; ** Setting up few built-in variables
-;; #+BEGIN_SRC emacs-lisp
-(setq next-line-add-newlines t)
-(setq sentence-end-double-space nil)
 
-(setq save-interprogram-paste-before-kill t)
-;; #+END_SRC
 
-;; ** Setting up predicators
-;; Change question from "yes or no" to "y or n".
-;; #+BEGIN_SRC emacs-lisp
-(fset 'yes-or-no-p 'y-or-n-p)
-;; #+END_SRC
-
-;; ** Global keychords
-;; #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key [f1] 'shell)
-;; Key binding below don't work in org mode. How to fix that?
-(global-set-key [C-tab] 'other-window) 
-;; #+END_SRC
 
 
 
 
 
 ;; #################
-;; Load the `general-packages' file.
+;; Load the `general-packages.org' file.
 
 ;; !!!!!!!!!!
 ;; All code below should at the end be in file
@@ -140,9 +127,6 @@
   (use-package beacon
     :ensure t
     :config (beacon-mode t))
-
-
-
 ;; #+END_SRC
 
 
@@ -156,8 +140,10 @@
 
 
 ;; Go language major mode
+;; #+BEGIN_SRC emacs-lisp
 (use-package go-mode
   :ensure t)
+;; #+END_SRC
 
 
 
@@ -169,21 +155,3 @@
 
 
 
-
-;; Code added by customize mode
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(nimbus))
- '(custom-safe-themes
-   '("2d0c343156093c69d9c4a5e2b59b0808dc6e7e4588a3750eca3d709eff180f87" default))
- '(ispell-dictionary nil)
- '(package-selected-packages '(nimbus-theme use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

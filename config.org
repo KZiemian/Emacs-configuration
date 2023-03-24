@@ -1,24 +1,6 @@
 * Configuration of basic build-in features
 
-** Global keychords
-#+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key [f1] 'shell)
-(global-set-key [C-tab] 'other-window)
-#+END_SRC
-
 ** Global minor modes
-#+BEGIN_SRC emacs-lisp
-  (global-linum-mode t)   ; Shows number of line on the left
-  ;; edge of window.
-  (column-number-mode t)  ; Shows number of column where point is.
-  (global-visual-line-mode 1)     ; Line of text are splited between
-  ;; buffers' line
-
-  (global-hl-line-mode t) ; Highlight the line where point is.
-
-  (electric-pair-mode t)  ; Toggle automatic parenthis pairing
-
   (winner-mode 1)         ; Allow to undo windows changes
 
   (setq outline-minor-mode-prefix "\C-c \C-o") ; Somethings don't work
@@ -27,7 +9,7 @@
   (global-auto-revert-mode 1)
   (setq auto-revert-verbose nil)		; Unknown variable?
   (global-set-key (kbd "<f5>") 'revet-buffer)
-#+END_SRC
+  
 
 ** Global hooks
 #+BEGIN_SRC emacs-lisp
@@ -36,20 +18,6 @@
   ;; Comment it out if you work with CCLDoc
 #+END_SRC
 
-** Setting up backups management
-#+BEGIN_SRC emacs-lisp
-  (setq backup-directory-alist
-        (list (cons "." (expand-file-name "backups/"
-                                          user-emacs-directory)))
-        delete-old-versions 1
-        version-control t
-        vc-make-backup-files t
-        auto-save-file-name-transforms
-        (list
-         (list ".*"
-               (expand-file-name "auto-save-list/" user-emacs-directory)
-               t)))
-#+END_SRC
 
 
 ** Configuration of documentation
@@ -60,7 +28,7 @@ Emacs don't know this variable?!?!
 
 ** Save customize settings to separate file, not to [[file:init.el][init.el]] file.
 #+BEGIN_SRC emacs-lisp
-  (setq custom-file
+(setq custom-file
         (expand-file-name "customize.el" user-emacs-directory))
 
   (load custom-file t)
