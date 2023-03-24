@@ -1,6 +1,21 @@
 #+TITLE General packages
-In this file we configure packages that should be avaliable in any Emacs 
-buffer and major mode. They are listed in alphabetical order.
+In this file we configure packages that should be avaliable in all or many
+Emacs buffer and major mode. They are listed in alphabetical order.
+
+* Ace-window
+Provide a way to fast switch between numbered windows.
+
+#+BEGIN_SRC emacs-lisp
+(use-package ace-window
+  :ensure t
+  :config
+  (global-set-key [remap other-window] 'ace-window)
+  (custom-set-faces
+  '(aw-leading-char-face
+    ((t (:inherit ace-jump-face-foreground :height 3.0))))))
+#+END_SRC
+
+
 
 * Achievements ;-)
 
@@ -10,6 +25,25 @@ buffer and major mode. They are listed in alphabetical order.
   :config (achievements-mode t))
 #+END_SRC
 
+
+
+* Avy
+Provide a way to quickly move inside windows and frames. In **Customize**
+set `avy-style' to `Pre' or other style that you prefer.
+
+#+BEGIN_SRC emacs-lisp
+(use-package avy
+  :ensure t
+  :bind (("C-:" . avy-goto-char)
+         ("C-'" . avy-goto-char-2)
+         ("M-g g" . avy-goto-line)
+         ("M-g M-g" . avy-goto-line)
+         ("M-g e" . avy-goto-word-0)
+         ("M-g w" . avy-goto-word-1)))
+#+END_SRC
+
+
+
 * Beacon
 When you move point, the wave appears showing where it is.
 
@@ -17,4 +51,32 @@ When you move point, the wave appears showing where it is.
 (use-package beacon
   :ensure t
   :config (beacon-mode t))
+#+END_SRC
+
+
+* Swiper
+Provide great searching engine in all variety of Emacs windows.
+
+#+BEGIN_SRC emacs-lisp
+(use-package swiper
+  :ensure t
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper)
+         ("C-c C-r" . ivy-resume)
+         ("M-x" . counsel-M-x)
+         ("C-x C-f" . 'counsel-find-file)
+         ("C-h f" . 'consuel-describe-function)
+         ("C-h v" . 'counsel-describe-variable)))
+#+END_SRC
+
+
+
+* Undo-tree
+Repleace build-in Emacs undo-redo mechanism with undo tree (tree structure
+of undo-redo mechanism).
+
+#+BEGIN_SRC emacs-lisp
+(use-package undo-tree
+  :ensure t
+  :config (global-undo-tree-mode t))
 #+END_SRC

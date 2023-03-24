@@ -1,0 +1,24 @@
+#+TITLE: Packages for specilized purpose
+In this we configure packages used for specialized purpose.
+
+* Org-ac
+Package provide auto-complete sources for **org-mode**.
+
+#+BEGIN_SRC emacs-lisp
+(use-package org-ac
+  :ensure t
+  :init
+  (require 'org-ac)
+  (org-ac/config-default))
+#+END_SRC
+
+
+
+* Org-bullets
+Provide unicode bullets for **org-mode**.
+
+#+BEGIN_SRC emacs-lisp
+(use-package org-bullets
+  :ensure t
+  :config (add-hook 'org-mode-hook (lambda () (org-bullets mode 1))))
+#+END_SRC

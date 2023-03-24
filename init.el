@@ -116,6 +116,16 @@
 
 
 ;; #################
+;; Load the `specialized-packages.org' file.
+
+(org-babel-load-file
+ (concat user-emacs-directory "Configuration-org/specialized-packages.org"))
+
+
+
+
+
+;; #################
 ;; Load the `programming-languages.org' file.
 
 ;; !!!!!!!!!!

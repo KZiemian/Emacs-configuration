@@ -6,45 +6,6 @@
 (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 #+END_SRC
 
-* Org-mode
-Configuration of giant **org-mode**.
-#+BEGIN_SRC emacs-lisp
-  (setq org-file-apps (append '(("\\.pdf\\" . "evince %s") org-file-apps)))
-
-
-  (global-set-key "\C-ca" 'org-agenda)
-
-
-
-  (use-package org-ac
-    :ensure t
-    :init
-    (require 'org-ac)
-    (org-ac/config-default))
-
-
-  ;; (global-set-key (kbd "C-c c") 'org-capture)
-
-
-  ;; (setq org-agenda-files (list ))
-
-  ;; (setq org-agenda-files (list "~/Podstawy-I/org/Wazne.org"
-  ;; 			     "~/Podstawy-I/org/Szybko.org"
-  ;; 			     "~/Podstawy-I/org/Praca.org"
-  ;; 			     "~/Podstawy-I/org/Ksiazki.org"
-  ;; 			     "~/Podstawy-I/org/Kup.org"
-  ;; 			     "~/Podstawy-I/org/Przemysl.org"))
-#+END_SRC
-
-** Org-bullets
-Unicode bullets for **org-mode**
-#+BEGIN_SRC emacs-lisp
-  (use-package org-bullets
-    :ensure t
-    :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-#+END_SRC
-
-
 * Additional functions written in elisp
   Loading additional functions that don't depend on external packages.
   #+BEGIN_SRC emacs-lisp
@@ -56,18 +17,6 @@ Unicode bullets for **org-mode**
 General packages
 
 
-** Ace-window
-Fast moving to numbered windows.
-#+BEGIN_SRC emacs-lisp
-  (use-package ace-window
-    :ensure t
-    :config
-    (global-set-key [remap other-window] 'ace-window)
-    (custom-set-faces
-     '(aw-leading-char-face
-       ((t (:inherit ace-jump-face-foreground :height 3.0))))))
-#+END_SRC
-
 ** Auto-complete
 #+BEGIN_SRC emacs-lisp
   (use-package auto-complete
@@ -76,21 +25,6 @@ Fast moving to numbered windows.
     (ac-config-default)
     (global-auto-complete-mode t))
 #+END_SRC
-
-** Avy
-Quick navigation in windows. In **Custoimize** set "avy-style" to "Pre"
-or anything you prefer.
-#+BEGIN_SRC emacs-lisp
-  (use-package avy
-    :ensure t
-    :bind (("C-:" . avy-goto-char)
-           ("C-'" . avy-goto-char-2)
-           ("M-g g" . avy-goto-line)
-           ("M-g M-g" . avy-goto-line)
-           ("M-g w" . avy-goto-word-1)
-           ("M-g e" . avy-goto-word-0)))
-#+END_SRC
-
 
 
 ** Color-theme-modern
@@ -193,13 +127,7 @@ To not forget this very promising theme.
 #+BEGIN_SRC emacs-lisp
   (use-package swiper
     :ensure t
-    :bind (("C-s" . swiper)
-           ("C-r" . swiper)
-           ("C-c C-r" . ivy-resume)
-           ("M-x" . counsel-M-x)
-           ("C-x C-f" . 'counsel-find-file)
-           ("C-h f" . 'counsel-describe-function)
-           ("C-h v" . 'counsel-describe-variable)
+    :bind
            ("C-h l" . 'counsel-find-library)
            ("C-h i" . 'counsel-info-lookup-symbol)
            ("C-c u" . 'counsel-unicode-char)
@@ -229,13 +157,6 @@ To not forget this very promising theme.
     :ensure t)
 #+END_SRC
 
-** Undo-tree
--- how to describe it????
-#+BEGIN_SRC emacs-lisp
-  (use-package undo-tree
-    :ensure t
-    :config (global-undo-tree-mode t))
-#+END_SRC
 
 ** Which-key
 -- how to describe it????

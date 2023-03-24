@@ -147,6 +147,35 @@ Configuration of gigantic **org-mode**.
   '(org-startup-indented t))
 #+END_SRC
 
+????
+#+BEGIN_SRC emacs-lisp
+(setq org-files-apps (append '(("\\.pdf\\" . "evince %s")
+   org-files-apps)))
+#+END_SRC
+
+????
+#+BEGIN_SRC emacs-lisp
+(global-set-key "\C-ca" 'org-agenda)
+#+END_SRC
+
+????
+#+BEGIN_SRC emacs-lisp
+;; (global-set-key (kbd "C-c c") 'org-capture)
+#+END_SRC
+
+?????
+#+BEGIN_SRC emacs-lisp
+  ;; (setq org-agenda-files (list ))
+
+  ;; (setq org-agenda-files (list
+  ;; "~/Podstawy-I/org/Wazne.org"
+  ;; "~/Podstawy-I/org/Szybko.org"
+  ;; "~/Podstawy-I/org/Praca.org"
+  ;; "~/Podstawy-I/org/Ksiazki.org"
+  ;; "~/Podstawy-I/org/Kup.org"
+  ;; "~/Podstawy-I/org/Przemysl.org"))
+#+END_SRC
+
 
 
 ** Settings of customize mode (???) in Emacs
@@ -167,7 +196,7 @@ Settings of custiomize mode will be loaded from `customize.el' file.
 
 
 ** Settings of auto-correction of normal languages
-Setting polish dictiornary for use by auto-correction program
+Setting polish dictionary for use by auto-correction program
 #+BEGIN_SRC emacs-lisp
 ;; (setq ispell-dictionary "english")
 (setq ispell-dictionary "polish")
