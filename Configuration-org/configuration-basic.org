@@ -4,14 +4,25 @@ This and all others Emacs configuration files own huge debt to
 
 * Configuration of basic build-in features
 
-** Setting up basic built-in variables
+** Settings of basic, mostly built-in, functionalities
 
+When point is at the last line in the file, typing C-n will add new
+line.
 #+BEGIN_SRC emacs-lisp
 (setq next-line-add-newlines t)
-(setq sentence-end-double-space nil)
+#+END_SRC
 
+Dot followed by single space will be considered end of the sentence.
+#+BEGIN_SRC emacs-lisp
+(setq sentence-end-double-space nil)
+#+END_SRC
+
+????
+#+BEGIN_SRC
 (setq save-interprogram-paste-before-kill t)
 #+END_SRC
+
+
 
 ** Predicators
 Change question from "yes or no" to "y or n".
@@ -59,14 +70,35 @@ Line where point is will be highlighted.
 (global-hl-line-mode t)
 #+END_SRC
 
-Allowing undoing of windows changes.
+Turn off the blinking of the point.
 #+BEGIN_SRC emacs-lisp
-(winner-mode 1)
+(blink-cursor-mode -1)
 #+END_SRC
 
-Switch on automatic parentis pairing.
+Delete the region when typing, just like as we expect nowadays.
+#+BEGIN_SRC emacs-lisp
+(delete-selection-mode t)
+#+END_SRC
+
+Turn on automatic parentis pairing.
 #+BEGIN_SRC emacs-lisp
 (electric-pair-mode t)
+#+END_SRC
+
+Show which parentis is paired with this currently pointed by the point.
+#+BEGIN_SRC emacs-lisp
+(show-paren-mode t)
+#+END_SRC
+
+Turn off bell sound (beep) in Emacs.
+#+BEGIN_SRC emacs-lisp
+(setq visibile-bell nil)
+(setq ring-bell-function (lambda () nil))
+#+END_SRC
+
+Allow undoing of windows changes.
+#+BEGIN_SRC emacs-lisp
+(winner-mode 1)
 #+END_SRC
 
 I don't know what code below is doing.
@@ -76,10 +108,14 @@ Somethings is wrong with code below? Maybe, I need to check it.
 (setq outline-minor-mode-prefix "\C-c \C-o")
 #+END_SRC
 
+
+
+????
 #+BEGIN_SRC emacs-lisp
 (global-auto-revert-mode 1)
 #+END_SRC
 
+?????
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "<F5>") 'revert-buffer)
 #+END_SRC
@@ -111,7 +147,7 @@ proper text) are reduced to single newline character.
 Setting up directory in which backups files will be stored.
 #+BEGIN_SRC emacs-lisp
 (setq backup-directory-alist
-  (list (cons "." (concat user-emacs-directory "EmacsBackups/"))))
+  '(("." . "EmacsBackups/")))
 #+END_SRC
 
 ????
@@ -119,14 +155,14 @@ Setting up directory in which backups files will be stored.
 (setq
   delete-old-versions 1
   version-control t
-  vc-make-backup-files t
-  auto-save-file-name-transforms
-  (list
-    (list ".*"
-      (concat user-emacs-directory "auto-save-list/")
-        t)))
+  vc-make-backup-files t)
 #+END_SRC
 
+????
+#+BEGIN_SRC emacs-lisp
+(setq auto-save-file-name-transforms
+  '((".*" "~/.emacs.d/auto-save-list" t)))
+#+END_SRC
 
 
 ** Org-mode

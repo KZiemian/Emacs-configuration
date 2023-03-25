@@ -1,11 +1,3 @@
-* Configuration of basic build-in features
-
-** Setting up auto-correction
-#+BEGIN_SRC emacs-lisp
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
-(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
-#+END_SRC
-
 * Additional functions written in elisp
   Loading additional functions that don't depend on external packages.
   #+BEGIN_SRC emacs-lisp
@@ -143,35 +135,6 @@ To not forget this very promising theme.
 
 
 * Configuration of LaTeX in Emacs
-
-** AUCTeX
-; Trzeba go instalować przez manger paciektów
-#+BEGIN_SRC emacs-lisp
-  ;; (use-package auctex
-  ;;   :ensure t)
-#+END_SRC
-
-** General LaTeX settings
-#+BEGIN_SRC emacs-lisp
-  (setq latex-run-command "lualatex")
-
-  ;; (setq latex-run-command "pdflatex  -file-line-error -interaction=nonstopmode")
-
-  (setq TeX-auto-save t
-        TeX-parse-self t
-        TeX-save-query nil
-        TeX-PDF-mode t)
-  ;; (setq-default TeX-master nil)  ; I don't know what this line do?!?!
-#+END_SRC
-
-** LaTeX-mode hooks
-#+BEGIN_SRC emacs-lisp
-  (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
-  (add-hook 'LaTeX-mode-hook 'auto-complete-mode)
-
-  (add-hook 'LaTeX-mode-hook (lambda () (outline-minor-mode 1)))
-  (add-hook 'latex-mode-hook (lambda () (outline-minor-mode 1)))
-#+END_SRC
 
 ** Reftex
 ,,Folding and unfolding parts of the text might be confusing, though,
