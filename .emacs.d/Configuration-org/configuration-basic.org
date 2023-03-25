@@ -196,7 +196,8 @@ Configuration of gigantic **org-mode**.
 
 ????
 #+BEGIN_SRC emacs-lisp
-;; (global-set-key (kbd "C-c c") 'org-capture)
+  ;; (global-set-key (kbd "C-c c") 'org-capture)
+  ;; (setq org-log t)
 #+END_SRC
 
 ?????

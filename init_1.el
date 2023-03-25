@@ -16,10 +16,6 @@
 ;; Installing packeges
 
 
-;; ##########
-
-
-
 
 ;; (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
@@ -51,13 +47,8 @@
 (defun recentf-clear ()
   (setq recentf-list nil))
 
-;; Ustawienie rozmiarow okna
-
-
-
-
-
 ;; Ustawienia LaTeXa.
+
 
 
 ;; (add-hook 'LaTeX-mode-hook (lambda ()
@@ -65,7 +56,6 @@
 ;; 			      '("latexmk" "latexmk -pdf %s" TeX-run-TeX nil t
 ;; 				:help "Run latexmk on file")
 ;; 			      TeX-command-list)))
-;; (add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "latexmk")))
 
 
 ;; Ustawienia pomniejszego, acz wszedobylskiego, trybu Helm.
@@ -256,21 +246,6 @@
 
 (fa-config-default)
 
-;; Ustawienia ORGganizera.
-
-(require 'org)
-(define-key global-map "\C-c l" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
-
-
-;; Ustawienie tematu Emacsa.
-
-
-
-
-
-
 ;; Ustawienia SLIME
 (use-package slime
   :init
@@ -293,12 +268,6 @@
 
 ;; Skrot dla compilacji
 (define-key global-map (kbd "C-c C-v") 'compile)
-;; (defun ()
-;;   (setq a 1))
-
-;; Agresive-indentation
-;; Wyłączony do pracy z CCLDoc
-;; (global-aggressive-indent-mode t)
 
 ;; Rust mode - rozszerzenia
 (add-hook 'rust-mode-hook 'cargo-minor-mode)

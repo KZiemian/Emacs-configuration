@@ -24,7 +24,7 @@
  '(org-startup-folded 'overview)
  '(org-startup-indented t)
  '(package-selected-packages
-   '(counsel swiper avy use-package diminish auctex undo-tree chronometer chess chronos crux ac-c-headers ac-clang ac-emoji ac-etags ac-helm ac-html ac-html-angular ac-ispell ac-slime atomic-chrome auctex-lua py-autopep8 ag latex-pretty-symbols go-play go-playground org-ac web-mode iedit multiple-cursors expand-region aggresive-indent hungry-delete jedi flycheck htmlize color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window))
+   '(auxtex counsel swiper avy use-package diminish auctex undo-tree chronometer chess chronos crux ac-c-headers ac-clang ac-emoji ac-etags ac-helm ac-html ac-html-angular ac-ispell ac-slime atomic-chrome auctex-lua py-autopep8 ag latex-pretty-symbols go-play go-playground org-ac web-mode iedit multiple-cursors expand-region aggresive-indent hungry-delete jedi flycheck htmlize color-theme-modern ox-reveal badger-theme badwolf-theme zenburn-theme beacon try swiper-helm rust-playground rainbow-delimiters org-bullets lorem-ipsum helm-gtags function-args auto-complete auctex-latexmk aggressive-indent achievements ace-window))
  '(use-package-verbose t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
