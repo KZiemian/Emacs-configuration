@@ -1,0 +1,73 @@
+#+TITLE: Configuration for LaTeX in Emacs
+
+In Ubuntu try first to install AUCTeX from command line.
+#+BEGIN_SRC sh
+sudo apt install auctex
+#+END_SRC
+
+** AUCTeX
+
+#+BEGIN_SRC emacs-lisp
+  ;; (use-package auctex
+  ;;   :ensure t)
+#+END_SRC
+
+
+
+** General LaTeX settings
+???
+
+???
+#+BEGIN_SRC emacs-lisp
+  ;; (setq latex-run-command "lualatex")
+#+END_SRC
+
+???
+#+BEGIN_SRC emacs-lisp
+(setq TeX-auto-save t
+      TeX-parse-self t
+      TeX-save-query t
+      TeX-PDF-mode t)
+#+END_SRC
+
+
+
+** LaTeX-mode hooks
+???
+
+???
+#+BEGIN_SRC emacs-lisp
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-mode-hook 'auto-complete-mode)
+#+END_SRC
+
+????
+#+BEGIN_SRC emacs-lisp
+(add-hook 'LaTeX-mode-hook (lambda () (outline-minor-mode 1)))
+(add-hook 'latex-mode-hook (lambda () (outline-minor-mode 1)))
+#+END_SRC
+
+
+
+** Settings of auto-corrector in LaTeX-mode
+????
+
+???
+#+BEGIN_SRC emacs-lisp
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
+#+END_SRC
+
+
+
+** Packages for LaTeX
+
+*** LaTeX-pretty-symbols
+Change display of many commands used by LaTeX and its packages
+from raw text to unicode characters.
+
+#+BEGIN_SRC emacs-lisp
+(use-package latex-pretty-symbols
+  :ensure t
+  :config (global-prettify-symbols-mode t))
+#+END_SRC

@@ -147,7 +147,7 @@ proper text) are reduced to single newline character.
 Setting up directory in which backups files will be stored.
 #+BEGIN_SRC emacs-lisp
 (setq backup-directory-alist
-  '(("." . "EmacsBackups/")))
+  '(("." . "~/.emacs.d/EmacsBackups/")))
 #+END_SRC
 
 ????

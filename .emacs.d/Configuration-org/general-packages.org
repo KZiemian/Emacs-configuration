@@ -2,6 +2,8 @@
 In this file we configure packages that should be avaliable in all or many
 Emacs buffer and major mode. They are listed in alphabetical order.
 
+
+
 * Ace-window
 Provide a way to fast switch between numbered windows.
 
@@ -54,6 +56,7 @@ When you move point, the wave appears showing where it is.
 #+END_SRC
 
 
+
 * Counsel
 This package is need for current configuration of Swiper to work. I don't
 know anything more about it.
@@ -66,6 +69,7 @@ know anything more about it.
   :map ivy-minibuffer-map
   ("M-y" . ivy-next-line)))
 #+END_SRC
+
 
 
 * Ivy
@@ -81,6 +85,7 @@ package to work. I don't know anything more about it.
     (setq ivy-use-virtual-buffers t)
     (setq ivy-display-style 'fancy))
 #+END_SRC
+
 
 
 * Swiper

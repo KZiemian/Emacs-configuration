@@ -126,7 +126,7 @@
 
 
 ;; #################
-;; Load the `specialized-packages.org' file.
+;; Load the `configuration-LaTeX.org' file.
 
 (org-babel-load-file
  (concat user-emacs-directory "Configuration-org/configuration-LaTeX.org"))
