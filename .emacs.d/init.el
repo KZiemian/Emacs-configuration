@@ -19,6 +19,7 @@
   (set-frame-size (selected-frame) 80 100))
 
 
+
 ;; Disable start up message.
 (setq inhibit-startup-message t)
 ;; Set up initial *scratch* content to nothing (empty string).
@@ -90,6 +91,8 @@
 
 ;; Backup file for `personal-information.org' is in directory
 ;; $HOME/Private-backups/Emacs-backups.
+(org-babel-load-file
+ (concat user-emacs-directory "Configuration-org/personal-information.org"))
 
 
 

@@ -24,12 +24,14 @@ Dot followed by single space will be considered end of the sentence.
 
 
 
-** Predicators
+** Predicates
 Change question from "yes or no" to "y or n".
 
 #+BEGIN_SRC emacs-lisp
 (defalias 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
+
+
 
 ** Global keychords
 ????
@@ -55,12 +57,12 @@ Shows number of line on the left edge of window.
 (global-linum-mode t)
 #+END_SRC
 
-Show number of colume where Emacs point is.
+Show number of column where Emacs point is.
 #+BEGIN_SRC emacs-lisp
 (column-number-mode t)
 #+END_SRC
 
-Lines longer that Emacs window won't be wrapped, but splitted between few lines.
+Lines longer that Emacs window won't be wrapped, but split between few lines.
 #+BEGIN_SRC emacs-lisp
 (global-visual-line-mode 1)
 #+END_SRC
@@ -80,12 +82,14 @@ Delete the region when typing, just like as we expect nowadays.
 (delete-selection-mode t)
 #+END_SRC
 
-Turn on automatic parentis pairing.
+Turn on automatic parentheses pairing.
 #+BEGIN_SRC emacs-lisp
 (electric-pair-mode t)
 #+END_SRC
 
-Show which parentis is paired with this currently pointed by the point.
+Show which parentis is paired with this currently pointed by the point,
+by changing their color to yellow.
+???? I wish that I can change color of pointed to dark green.
 #+BEGIN_SRC emacs-lisp
 (show-paren-mode t)
 #+END_SRC
@@ -123,15 +127,15 @@ Somethings is wrong with code below? Maybe, I need to check it.
 
 
 ** Global build-in hooks
-These build-in hooks will be avalible in any Emacs windows and major
+These build-in hooks will be available in any Emacs windows and major
 modes.
 
 After calling function to save a buffer and before it is saved,
-Emacs will remove all whitespaces from the end of the line, with
+Emacs will remove all white spaces from the end of the line, with
 exception for empty lines that are not at the ending of the file,
 and all the empty lines from the end of the file.
 
-As a result all non empty lines will end with non-whitespace character.
+As a result all non empty lines will end with non-white spaces character.
 Empty lines that are not at the end of the file (the are follow by some
 proper text) are reduced to single newline character.
 
@@ -142,7 +146,7 @@ proper text) are reduced to single newline character.
 
 
 ** Setting of backups files management
-???? Add explenation what this code do.
+???? Add explanation what this code do.
 
 Setting up directory in which backups files will be stored.
 #+BEGIN_SRC emacs-lisp
@@ -225,7 +229,7 @@ Setting location of `customize.el' file.
   (concat user-emacs-directory "Customize-file/customize.el"))
 #+END_SRC
 
-Settings of custiomize mode will be loaded from `customize.el' file.
+Settings of customize mode will be loaded from `customize.el' file.
 #+BEGIN_SRC emacs-lisp
 (load custom-file t)
 #+END_SRC
@@ -243,4 +247,12 @@ Turning on auto-correction in standard .txt files.
 #+BEGIN_SRC emacs-lisp
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'text-mode-hook 'flyspell-buffer)
+#+END_SRC
+
+* Fonts
+Setting of fonts used by Emacs.
+
+Setting font size.
+#+BEGIN_SRC emacs-lisp
+(set-face-attribute 'default nil :height 160)
 #+END_SRC

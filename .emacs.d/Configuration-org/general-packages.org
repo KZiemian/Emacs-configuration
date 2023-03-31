@@ -88,6 +88,22 @@ package to work. I don't know anything more about it.
 
 
 
+** Rainbow-delimiters
+Delimiters like parentheses will have different at different level of
+nesting. Colors of delimiters are set using customize mode, so can be
+found in `customize.el' in directory $HOME/.emacs.d/Customize-file.
+
+#+BEGIN_SRC emacs-lisp
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook   'rainbow-delimiters-mode)
+  (add-hook 'LaTeX-mode-hook  'rainbow-delimiters-mode)
+  (add-hook 'BibTeX-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'org-mode-hook    'rainbow-delimiters-mode))
+#+END_SRC
+
+
 * Swiper
 Provide great searching engine in all variety of Emacs windows.
 

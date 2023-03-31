@@ -64,7 +64,7 @@ sudo apt install auctex
 
 *** LaTeX-pretty-symbols
 Change display of many commands used by LaTeX and its packages
-from raw text to unicode characters.
+from raw text to Unicode characters.
 
 #+BEGIN_SRC emacs-lisp
 (use-package latex-pretty-symbols

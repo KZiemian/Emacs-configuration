@@ -1,4 +1,4 @@
-#+TITLE: Packages for specilized purpose
+#+TITLE: Packages for specialized purpose
 In this we configure packages used for specialized purpose.
 
 * Org-ac
@@ -15,7 +15,7 @@ Package provide auto-complete sources for **org-mode**.
 
 
 * Org-bullets
-Provide unicode bullets for **org-mode**.
+Provide Unicode bullets for **org-mode**.
 
 #+BEGIN_SRC emacs-lisp
 (use-package org-bullets
