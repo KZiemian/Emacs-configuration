@@ -36,9 +36,12 @@ Change question from "yes or no" to "y or n".
 ** Global keychords
 ????
 
+Note that `[f1]' and `[F1]' design two different keychords. In Emacs
+proper name of standard F1 button on keybord is `[f1]'.
+
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key [F1] 'shell)
+(global-set-key [f1] 'shell)
 #+END_SRC
 
 Key binding below don't work in org mode. How to fix that?
